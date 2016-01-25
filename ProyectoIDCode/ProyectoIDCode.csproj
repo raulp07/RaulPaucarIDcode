@@ -159,6 +159,7 @@
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="form_wizard.aspx" />
     <Content Include="form_wizard.html" />
     <Content Include="img\a1 - copia.jpg" />
     <Content Include="img\a1.jpg" />
@@ -219,6 +220,7 @@
     <Content Include="img\p_big2.jpg" />
     <Content Include="img\p_big3.jpg" />
     <Content Include="img\zender_logo.png" />
+    <Content Include="index.aspx" />
     <Content Include="index.html" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -631,6 +633,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="form_wizard.aspx.cs">
+      <DependentUpon>form_wizard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form_wizard.aspx.designer.cs">
+      <DependentUpon>form_wizard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MQConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
