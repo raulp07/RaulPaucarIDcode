@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WcfService"
+                   namespace="WcfService.Dominio"
+                   default-lazy="false">
+  <class name="ObligacionPago" table="tb_obligacion_pago">
+    <id name="cd_grado" column="cd_grado">
+      <generator class="increment" />
+    </id>
+    <property name="ds_grado" column="ds_grado" />
+    <property name="qt_monto" column="qt_monto" />
+  </class>
+</hibernate-mapping>

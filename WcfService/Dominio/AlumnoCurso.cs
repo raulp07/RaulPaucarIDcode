@@ -7,11 +7,14 @@ using System.Web;
 namespace WcfService.Dominio
 {
     [DataContract]
-    public class Curso
+    public class AlumnoCurso
     {
         [DataMember]
-        public int cd_curso { get; set; }
+        public Alumno cd_alumno { get; set; }
         [DataMember]
-        public string ds_curso { get; set; }
+        public Curso cd_curso { get; set; }
+        [DataMember]
+        public double qt_nota { get; set; }
+        
     }
 }

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WcfService"
+                   namespace="WcfService.Dominio"
+                   default-lazy="false">
+  <class name="AlumnoCurso" table="tb_alumno_curso">
+    <many-to-one name="cd_alumno" column="cd_alumno" />
+    <many-to-one name="cd_curso" column="cd_curso" />
+    <property name="qt_nota" column="qt_nota" />
+  </class>
+</hibernate-mapping>

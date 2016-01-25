@@ -39,7 +39,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\Librerias\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate">
+      <HintPath>..\Librerias\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -59,21 +65,35 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service1.svc" />
+    <EmbeddedResource Include="Dominio\Padre.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Alumno.hbm.xml" />
+    <EmbeddedResource Include="Dominio\ObligacionPago.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Curso.hbm.xml" />
+    <EmbeddedResource Include="Dominio\AlumnoCurso.hbm.xml" />
+    <Content Include="ReservaService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dominio\Alumno.cs" />
+    <Compile Include="Dominio\AlumnoCurso.cs" />
     <Compile Include="Dominio\Curso.cs" />
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="Dominio\ObligacionPago.cs" />
+    <Compile Include="Dominio\Padre.cs" />
+    <Compile Include="Persistencia\AlumnoCursoDAO.cs" />
+    <Compile Include="Persistencia\AlumnoDAO.cs" />
+    <Compile Include="Persistencia\BaseDAO.cs" />
+    <Compile Include="Persistencia\ConexionUtil.cs" />
+    <Compile Include="Persistencia\CursoDAO.cs" />
+    <Compile Include="Persistencia\NHibernateHelper.cs" />
+    <Compile Include="Persistencia\ObligacionPagoDAO.cs" />
+    <Compile Include="Persistencia\PadreDAO.cs" />
+    <Compile Include="ReservaService.svc.cs">
+      <DependentUpon>ReservaService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="IReservaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Persistencia\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

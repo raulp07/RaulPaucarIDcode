@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoIDCode", "ProyectoI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{D4BFA679-11FB-42A4-89C1-5522506317D5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{EE130919-10C1-4C07-A050-84E8201F5BF9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\UPC\Aplicaciones Distribuidas\Semana 2\Sesion 4\Trabajo-JohnnyLuisRivera\LabSOAPsabado\Librerias\Iesi.Collections.dll = ..\..\UPC\Aplicaciones Distribuidas\Semana 2\Sesion 4\Trabajo-JohnnyLuisRivera\LabSOAPsabado\Librerias\Iesi.Collections.dll
+		..\..\UPC\Aplicaciones Distribuidas\Semana 2\Sesion 4\Trabajo-JohnnyLuisRivera\LabSOAPsabado\Librerias\NHibernate.dll = ..\..\UPC\Aplicaciones Distribuidas\Semana 2\Sesion 4\Trabajo-JohnnyLuisRivera\LabSOAPsabado\Librerias\NHibernate.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
