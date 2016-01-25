@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WcfService"
+                   namespace="WcfService.Dominio"
+                   default-lazy="false">
+  <class name="Padre" table="tb_padre">
+    <id name="cd_padre" column="cd_padre">
+      <generator class="increment" />
+    </id>
+    <property name="ds_nombre" column="ds_nombre" />
+    <property name="ds_apellido" column="ds_apellido" />
+  </class>
+</hibernate-mapping>

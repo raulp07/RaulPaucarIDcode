@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WcfService"
+                   namespace="WcfService.Dominio"
+                   default-lazy="false">
+  <class name="Alumno" table="tb_alumno">
+    <id name="cd_alumno" column="cd_alumno">
+      <generator class="increment" />
+    </id>
+    <property name="ds_nombre" column="ds_nombre" />
+    <property name="ds_apellido" column="ds_apellido" />
+    <many-to-one name="cd_padre" column="cd_padre" />
+    <many-to-one name="cd_grado" column="cd_grado" />
+  </class>
+</hibernate-mapping>
