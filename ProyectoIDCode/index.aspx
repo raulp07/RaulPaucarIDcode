@@ -192,7 +192,47 @@
             </div>
         <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-            <div class="col-lg-4">
+            <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:TemplateField HeaderText="Alumno">
+                        <ItemTemplate>
+                            <table class="nav-justified">
+                                <tr>
+                                    <td rowspan="4">
+                                        <asp:Image ID="Image1" runat="server" />
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblnombre" runat="server" Text='<%# Bind("ds_nombre") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblapellido" runat="server" Text='<%# Bind("ds_apellido") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblgrado" runat="server" Text='<%# Bind("cd_grado") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+                <EmptyDataTemplate>
+                   
+
+
+                </EmptyDataTemplate>
+            </asp:GridView>
+
+
+        <%--    <div class="col-lg-4">
                 <div class="contact-box">
                     <a href="form_wizard.html">
                     <div class="col-sm-4">
@@ -283,7 +323,7 @@
                     <div class="clearfix"></div>
                         </a>
                 </div>
-            </div>
+            </div>--%>
         </div>
         </div>
         <div class="footer">
