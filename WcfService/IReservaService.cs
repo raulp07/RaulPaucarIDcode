@@ -24,6 +24,12 @@ namespace WcfService
 
         [OperationContract]
         Alumno registarAlumno(int cd_padre,string ds_nombre,int cd_grado,string ds_apellido);
+
+        [OperationContract]
+        ReservaMatricula CrearReserva(int codigoAlumno, DateTime fechaReserva, char estado, double monto);
+
+        [OperationContract]
+        void CancelarReserva(int codigoReserva);
     }
 
 }

@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,6 +71,7 @@
     <EmbeddedResource Include="Dominio\ObligacionPago.hbm.xml" />
     <EmbeddedResource Include="Dominio\Curso.hbm.xml" />
     <EmbeddedResource Include="Dominio\AlumnoCurso.hbm.xml" />
+    <EmbeddedResource Include="Dominio\ReservaMatricula.hbm.xml" />
     <Content Include="ReservaService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -79,6 +81,7 @@
     <Compile Include="Dominio\Curso.cs" />
     <Compile Include="Dominio\ObligacionPago.cs" />
     <Compile Include="Dominio\Padre.cs" />
+    <Compile Include="Dominio\ReservaMatricula.cs" />
     <Compile Include="Persistencia\AlumnoCursoDAO.cs" />
     <Compile Include="Persistencia\AlumnoDAO.cs" />
     <Compile Include="Persistencia\BaseDAO.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Persistencia\NHibernateHelper.cs" />
     <Compile Include="Persistencia\ObligacionPagoDAO.cs" />
     <Compile Include="Persistencia\PadreDAO.cs" />
+    <Compile Include="Persistencia\ReservaMatriculaDAO.cs" />
     <Compile Include="ReservaService.svc.cs">
       <DependentUpon>ReservaService.svc</DependentUpon>
     </Compile>
