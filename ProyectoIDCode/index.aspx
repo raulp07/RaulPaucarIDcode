@@ -314,6 +314,11 @@
                                                         <asp:Label ID="lblgrado" runat="server" Text='<%# Eval("cd_grado") %>'></asp:Label>
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <td>
+                                                        <asp:LinkButton ID="lbver" runat="server" CommandName="lbnver" CommandArgument='<%# Eval("cd_alumno") %>'>Ver</asp:LinkButton>
+                                                    </td>
+                                                </tr>
                                             </table>
                                         </td>
 

@@ -41,13 +41,15 @@ namespace ProyectoIDCode
 
         protected void lvalumnos_PagePropertiesChanged(object sender, EventArgs e)
         {
-            lvalumnos.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
-            cargaralumnos();
+            //lvalumnos.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+            
+            //cargaralumnos();
         }
 
         protected void lvalumnos_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-
+            string codigo = e.CommandArgument.ToString();
+            Response.Redirect("form_wizard.aspx?cod_alumno=" + codigo);
         }
 
         protected void lvalumnos_DataBound(object sender, EventArgs e)
