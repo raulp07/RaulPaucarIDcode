@@ -17,19 +17,40 @@ namespace ProyectoIDCode
         {
             if (!Page.IsPostBack)
             {
-                SqlConnection cn = new SqlConnection("Data Source=DESKTOP-74PRT41\\SQLEXPRESS;Initial Catalog=BD_IDCode;Integrated Security=true;");
-                DataTable tb=new DataTable();
-                SqlCommand cmd = new SqlCommand("listar_alumnos",cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(tb);
-                GridView1.DataSource = tb;
-                GridView1.DataBind();
+                cargaralumnos();
             }
             
         }
 
+        private void cargaralumnos()
+        {
+            SqlConnection cn = new SqlConnection("Data Source=DESKTOP-74PRT41\\SQLEXPRESS;Initial Catalog=BD_IDCode;Integrated Security=true;");
+            DataTable tb = new DataTable();
+            SqlCommand cmd = new SqlCommand("listar_alumnos", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tb);
+            lvalumnos.DataSource = tb;
+            lvalumnos.DataBind();
+        }
+
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lvalumnos_PagePropertiesChanged(object sender, EventArgs e)
+        {
+            lvalumnos.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+            cargaralumnos();
+        }
+
+        protected void lvalumnos_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+
+        }
+
+        protected void lvalumnos_DataBound(object sender, EventArgs e)
         {
 
         }
