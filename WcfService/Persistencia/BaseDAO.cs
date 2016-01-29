@@ -1,8 +1,10 @@
 ﻿using NHibernate;
+using NHibernate.Criterion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WcfService.Dominio;
 
 namespace WcfService.Persistencia
 {
@@ -47,6 +49,21 @@ namespace WcfService.Persistencia
             {
                 ICriteria busqueda = sesion.CreateCriteria(typeof(Entidad));
                 return busqueda.List<Entidad>();
+            }
+        }
+         public ICollection<Entidad> ListarSituacionAcademica(int codigo)
+        {
+
+            Alumno alumno = new Alumno();
+            alumno.cd_alumno = codigo;
+
+            using (ISession sesion = NHibernateHelper.ObtenerSesion())
+            {
+                    
+                ICriteria query = sesion.CreateCriteria(typeof(Entidad));
+                query.Add(Restrictions.Eq("cd_alumno", alumno));
+                IList<Entidad> lista = query.List<Entidad>();
+                return lista;
             }
         }
     }

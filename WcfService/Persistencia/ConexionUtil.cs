@@ -9,7 +9,7 @@ namespace WcfService.Persistencia
     {
         public static string ObtenerCadena()
         {
-            return "Data Source=(local);Initial Catalog=BD_IDCode;Integrated Security=SSPI;";
+            return "Data Source=(local);Initial Catalog=BD_ProyectoDSD2;Integrated Security=SSPI;";
         }
     }
 }

@@ -13,17 +13,6 @@ namespace WcfService
     public class ReservaService : IReservaService
     {
 
-        private AlumnoCursoDAO alumnoCursoDAO = null;
-        private AlumnoCursoDAO AlumnoCursoDAO
-        {
-            get
-            {
-                if(alumnoCursoDAO == null)
-                    alumnoCursoDAO = new AlumnoCursoDAO();
-                return alumnoCursoDAO;
-            }
-        }
-
         private AlumnoDAO alumnoDAO = null;
         private AlumnoDAO AlumnoDAO
         {
@@ -32,6 +21,17 @@ namespace WcfService
                 if (alumnoDAO == null)
                     alumnoDAO = new AlumnoDAO();
                 return alumnoDAO;
+            }
+        }
+
+        private NotaDAO notaDAO = null;
+        private NotaDAO NotaDAO
+        {
+            get
+            {
+                if (notaDAO == null)
+                    notaDAO = new NotaDAO();
+                return notaDAO;
             }
         }
 
@@ -57,16 +57,22 @@ namespace WcfService
             }
         }
 
+        private LibroPendienteDAO libroPendienteDAO = null;
+        private LibroPendienteDAO LibroPendienteDAO
+        {
+            get
+            {
+                if (libroPendienteDAO == null)
+                    libroPendienteDAO = new LibroPendienteDAO();
+                return libroPendienteDAO;
+            }
+        }
+
+
         public Dominio.Alumno ConsultarAlumno(int cd_alumno)
         {
             return AlumnoDAO.Obtener(cd_alumno);
         }
-
-        public Dominio.AlumnoCurso ConsultarSituacionAcademica(int cd_alumno)
-        {
-            return AlumnoCursoDAO.Obtener(cd_alumno);
-        }
-
 
         public Dominio.Padre ConsultarPadre(int cd_padre)
         {
@@ -86,6 +92,19 @@ namespace WcfService
                 cd_grado = obligacionPago
             };
             return AlumnoDAO.Crear(alumnoAregistrar);
+        }
+
+ 
+        public List<Nota> ConsultarSituacionAcademicaXalumno(int cd_alumno)
+        {
+
+            return NotaDAO.ListarSituacionAcademica(cd_alumno).ToList();
+        }
+
+
+        public List<LibroPendiente> ConsultarLibrosPendientes(int cd_alumno)
+        {
+            return LibroPendienteDAO.ListarSituacionAcademica(cd_alumno).ToList();
         }
     }
 }

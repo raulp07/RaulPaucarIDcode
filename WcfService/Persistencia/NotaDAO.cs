@@ -6,7 +6,7 @@ using WcfService.Dominio;
 
 namespace WcfService.Persistencia
 {
-    public class CursoDAO : BaseDAO<Curso,int>
+    public class NotaDAO : BaseDAO<Nota,int>
     {
     }
 }
