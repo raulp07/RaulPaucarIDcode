@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WcfService"
+                   namespace="WcfService.Dominio"
+                   default-lazy="false">
+  <class name="ReservaMatricula" table="tb_reserva">
+    <id name="Codigo" column="cd_reserva">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="Alumno" column="cd_alumno" />
+    <property name="FechaReserva" column="dt_fecha_reserva" />
+    <property name="Estado" column="fg_estado" />
+    <property name="Monto" column="qt_monto_pagar" />
+  </class>
+</hibernate-mapping>

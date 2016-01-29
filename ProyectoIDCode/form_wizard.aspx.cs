@@ -9,9 +9,14 @@ namespace ProyectoIDCode
 {
     public partial class form_wizard : System.Web.UI.Page
     {
+
+        static string cod_alumno;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                cod_alumno = Request.QueryString["cod_alumno"];
+            }
         }
     }
 }
