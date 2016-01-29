@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="form_wizard.aspx.cs" Inherits="ProyectoIDCode.form_wizard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="notas.aspx.cs" Inherits="ProyectoIDCode.notas" %>
 
 <!DOCTYPE html>
 
@@ -7,12 +7,6 @@
     <title></title>
 </head>
 <body>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>School++</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
@@ -20,9 +14,7 @@
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <form id="form1" runat="server">
-    
-
-    <div id="wrapper">
+<div id="wrapper">
 
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
@@ -48,9 +40,9 @@
                 <li class="active">
                     <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
                     <ul class="nav nav-second-level">
-                        <li class="active"><a href="contacts.html">Matrícula 2016</a></li>
-                        <li><a href="profile.html">Notas Académicas</a></li>
-                        <li><a href="projects.html">Horario Académico</a></li>
+                        <li><a href="contacts.html">Matrícula 2016</a></li>
+                        <li class="active"><a href="profile.html">Notas Académicas</a></li>
+                        <li><a href="projects.html">Actualizar Datos</a></li>
                         <li><a href="project_detail.html">Datos Personales</a></li>
                         <li><a href="file_manager.html">Pagos y deudas</a></li>
                     </ul>
@@ -180,7 +172,7 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Reserva de matrícula 2016</h2>
+                    <h2>Notas Académicas 2015</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="index.html">Home</a>
@@ -189,7 +181,7 @@
                             <a>App Views</a>
                         </li>
                         <li class="active">
-                            <strong>Reserva</strong>
+                            <strong>Notas Académicas</strong>
                         </li>
                     </ol>
                 </div>
@@ -199,15 +191,120 @@
             </div>
         <div class="wrapper wrapper-content animated fadeInRight">
             <div class="row">
-                <div class="col-lg-5">
+                
+                
+                <div class="col-lg-4">
+                    <div class="widget-head-color-box navy-bg p-lg text-center">
+                        <div class="m-b-md">
+                        <h2 class="font-bold no-margins">
+                            Alex Smith
+                        </h2>
+                            <small>1° de Primaria</small>
+                        </div>
+                        <img src="img/a4.jpg" class="img-circle circle-border m-b-md" alt="profile">
+                        <div>
+                            <span>Pomedio Global: 17</span>
+                        </div>
+                    </div>
+                    <div class="widget-text-box">
+                        <h4 class="media-heading">Alex Smith</h4>
+                        <p>Desempeño académico destacable.</p>
+                        <div class="text-right">
+                            <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                            <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Love</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                <div class="col-lg-8">
+                <div style="margin-top:10px" class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Notas Académicas</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">Config option 1</a>
+                                </li>
+                                <li><a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Curso</th>
+                                <th>Profesor</th>
+                                <th>Nota Final</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>16</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>17</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+                <!--<div class="col-lg-5">
                     <div class="jumbotron">
-                        <h1>Reserva</h1>
+                        <h1>Notas</h1>
                         <p>Para finalizar la reserva de matricula, usted deberá de pasar las siguientes restricciones.</p>
                         <p><a href="#"  class="btn btn-primary btn-lg" role="button">Ver video de ayuda</a>
                         </p>
                     </div>
-                </div>
-                <div class="col-lg-7">
+                </div>-->
+                
+                <!--<div class="col-lg-7">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>Proceso de reserva matrícula 2016</h5>
@@ -234,56 +331,50 @@
                             Validar las siguientes restrciones
                         </p>
                         <div id="wizard">
-                            <%--<h1>Situacion Académica</h1>--%>
-                            <asp:Button ID="btnsitacademica" runat="server" Text="Situacion Académica" class="btn btn-primary btn-sm" OnClick="btnsitacademica_Click" />
-                            
+                            <h1>Situacion Académica</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                <h2>Aprobado</h2>
+                                <p>
+                                    EL Alumno no debe nunguna materia académica.
+                                </p>
+                                </div>
+                            </div>
 
-                            <%--<h1>Devolución de libros</h1>--%>
-                            <asp:Button ID="btndevolucion" runat="server" Text="Devolución de libros" class="btn btn-primary btn-sm" OnClick="btndevolucion_Click" />
-                            
+                            <h1>Devolución de libros</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                    <h2>Completo</h2>
+                                    <p>
+                                        El alumno no presenta ningun prestamo de libro pendiente.
+                                    </p>
+                                </div>
+                            </div>
 
-                            <%--<h1>Estado de deudas</h1>--%>
-                            <asp:Button ID="btnestadoD" runat="server" Text="Estado de deudas" class="btn btn-primary btn-sm" OnClick="btnestadoD_Click" />
-                            
-                            <table>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lblmensaje" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            
+                            <h1>Estado de deudas</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                    <h2>Cancelado</h2>
+                                    <p>
+                                        El alumno no presenta ninguna deuda pendiente.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <table>
-                                <tr>
-                                    <td>
-                                        <asp:Button ID="btcontinuar" runat="server" Text="Continuar" class="btn btn-primary btn-sm" OnClick="btcontinuar_Click" />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </td>
-                                    <td>
-                                        <asp:Button ID="btnnext" runat="server" Text="Next" class="btn btn-primary btn-sm" OnClick="btnnext_Click" />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </td>
-                                    <td>
-                                        <asp:Button ID="btnfinish" runat="server" Text="Finish" class="btn btn-primary btn-sm" OnClick="btnfinish_Click" />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </td>
-                                    <td>
-                                        <asp:Button ID="btncancel" runat="server" Text="Cancel" class="btn btn-primary btn-sm" />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </td>
-                                </tr>
 
-                            </table>
-                        </div>
                     </div>
                 </div>
-            </div>
-            </div>
+            </div>-->
+                
+                
+            </div>            
+        </div>            
             
-            </div>
+            
+            
+            
+            
+            
         <div class="footer">
             <div class="pull-right">
                 10GB of <strong>250GB</strong> Free.
@@ -316,88 +407,75 @@
 
 
     <script>
-
         $(document).ready(function () {
+            $("#wizard").steps();
+            $("#form").steps({
+                bodyTag: "fieldset",
+                onStepChanging: function (event, currentIndex, newIndex) {
+                    // Always allow going backward even if the current step contains invalid fields!
+                    if (currentIndex > newIndex) {
+                        return true;
+                    }
 
+                    // Forbid suppressing "Warning" step if the user is to young
+                    if (newIndex === 3 && Number($("#age").val()) < 18) {
+                        return false;
+                    }
 
+                    var form = $(this);
 
-            $("#wizard").steps({
-                startIndex: 0,
-                enableFinishButton: false,
-                enablePagination: false,
+                    // Clean up if user went backward before
+                    if (currentIndex < newIndex) {
+                        // To remove error styles
+                        $(".body:eq(" + newIndex + ") label.error", form).remove();
+                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    }
+
+                    // Disable validation on fields that are disabled or hidden.
+                    form.validate().settings.ignore = ":disabled,:hidden";
+
+                    // Start validation; Prevent going forward if false
+                    return form.valid();
+                },
+                onStepChanged: function (event, currentIndex, priorIndex) {
+                    // Suppress (skip) "Warning" step if the user is old enough.
+                    if (currentIndex === 2 && Number($("#age").val()) >= 18) {
+                        $(this).steps("next");
+                    }
+
+                    // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
+                    if (currentIndex === 2 && priorIndex === 3) {
+                        $(this).steps("previous");
+                    }
+                },
+                onFinishing: function (event, currentIndex) {
+                    var form = $(this);
+
+                    // Disable validation on fields that are disabled.
+                    // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
+                    form.validate().settings.ignore = ":disabled";
+
+                    // Start validation; Prevent form submission if false
+                    return form.valid();
+                },
+                onFinished: function (event, currentIndex) {
+                    var form = $(this);
+
+                    // Submit form input
+                    form.submit();
+                }
+            }).validate({
+                errorPlacement: function (error, element) {
+                    element.before(error);
+                },
+                rules: {
+                    confirm: {
+                        equalTo: "#password"
+                    }
+                }
             });
         });
-
-        //$(document).ready(function () {
-        //    $("#wizard").steps();
-        //    $("#form").steps({
-        //        bodyTag: "fieldset",
-        //        onStepChanging: function (event, currentIndex, newIndex) {
-        //            // Always allow going backward even if the current step contains invalid fields!
-        //            if (currentIndex > newIndex) {
-        //                return true;
-        //            }
-
-        //            // Forbid suppressing "Warning" step if the user is to young
-        //            if (newIndex === 3 && Number($("#age").val()) < 18) {
-        //                return false;
-        //            }
-
-        //            var form = $(this);
-
-        //            // Clean up if user went backward before
-        //            if (currentIndex < newIndex) {
-        //                // To remove error styles
-        //                $(".body:eq(" + newIndex + ") label.error", form).remove();
-        //                $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
-        //            }
-
-        //            // Disable validation on fields that are disabled or hidden.
-        //            form.validate().settings.ignore = ":disabled,:hidden";
-
-        //            // Start validation; Prevent going forward if false
-        //            return form.valid();
-        //        },
-        //        onStepChanged: function (event, currentIndex, priorIndex) {
-        //            // Suppress (skip) "Warning" step if the user is old enough.
-        //            if (currentIndex === 2 && Number($("#age").val()) >= 18) {
-        //                $(this).steps("next");
-        //            }
-
-        //            // Suppress (skip) "Warning" step if the user is old enough and wants to the previous step.
-        //            if (currentIndex === 2 && priorIndex === 3) {
-        //                $(this).steps("previous");
-        //            }
-        //        },
-        //        onFinishing: function (event, currentIndex) {
-        //            var form = $(this);
-
-        //            // Disable validation on fields that are disabled.
-        //            // At this point it's recommended to do an overall check (mean ignoring only disabled fields)
-        //            form.validate().settings.ignore = ":disabled";
-
-        //            // Start validation; Prevent form submission if false
-        //            return form.valid();
-        //        },
-        //        onFinished: function (event, currentIndex) {
-        //            var form = $(this);
-
-        //            // Submit form input
-        //            form.submit();
-        //        }
-        //    }).validate({
-        //        errorPlacement: function (error, element) {
-        //            element.before(error);
-        //        },
-        //        rules: {
-        //            confirm: {
-        //                equalTo: "#password"
-        //            }
-        //        }
-        //    });
-        //});
     </script>
-
     </form>
 </body>
 </html>

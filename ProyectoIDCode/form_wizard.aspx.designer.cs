@@ -40,13 +40,13 @@ namespace ProyectoIDCode {
         protected global::System.Web.UI.WebControls.Button btndevolucion;
         
         /// <summary>
-        /// Button1 control.
+        /// btnestadoD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnestadoD;
         
         /// <summary>
         /// lblmensaje control.
@@ -58,13 +58,13 @@ namespace ProyectoIDCode {
         protected global::System.Web.UI.WebControls.Label lblmensaje;
         
         /// <summary>
-        /// btnprevius control.
+        /// btcontinuar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnprevius;
+        protected global::System.Web.UI.WebControls.Button btcontinuar;
         
         /// <summary>
         /// btnnext control.

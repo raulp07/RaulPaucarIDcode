@@ -63,6 +63,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cancelarMatricula.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -157,12 +158,12 @@
     <Content Include="css\plugins\toastr\toastr.min.css" />
     <Content Include="css\style.css" />
     <Content Include="css\style.min.css" />
+    <Content Include="datos.aspx" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="form_wizard.aspx" />
-    <Content Include="form_wizard.html" />
     <Content Include="img\a1 - copia.jpg" />
     <Content Include="img\a1.jpg" />
     <Content Include="img\a2 - copia.jpg" />
@@ -223,7 +224,6 @@
     <Content Include="img\p_big3.jpg" />
     <Content Include="img\zender_logo.png" />
     <Content Include="index.aspx" />
-    <Content Include="index.html" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\demo\chartjs-demo.js" />
@@ -632,6 +632,11 @@
     <Content Include="js\plugins\toastr\toastr.min.js" />
     <Content Include="js\plugins\validate\jquery.validate.min.js" />
     <Content Include="js\plugins\video\responsible-video.js" />
+    <Content Include="notas.html" />
+    <Content Include="observaciones.aspx" />
+    <Content Include="observaciones.html" />
+    <Content Include="pagos.aspx" />
+    <Content Include="pagos.html" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Alumno.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -661,6 +666,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cancelarMatricula.aspx.cs">
+      <DependentUpon>cancelarMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cancelarMatricula.aspx.designer.cs">
+      <DependentUpon>cancelarMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datos.aspx.cs">
+      <DependentUpon>datos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datos.aspx.designer.cs">
+      <DependentUpon>datos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="form_wizard.aspx.cs">
       <DependentUpon>form_wizard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -676,6 +695,20 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="MQConexion.cs" />
+    <Compile Include="observaciones.aspx.cs">
+      <DependentUpon>observaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="observaciones.aspx.designer.cs">
+      <DependentUpon>observaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pagos.aspx.cs">
+      <DependentUpon>pagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pagos.aspx.designer.cs">
+      <DependentUpon>pagos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\WSMatricula\Reference.cs">
       <AutoGen>True</AutoGen>

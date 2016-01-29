@@ -21,57 +21,24 @@ namespace ProyectoIDCode
         {
             if (!Page.IsPostBack)
             {
-                cod_alumno = Int32.Parse( Request.QueryString["cod_alumno"].ToString());
-                cargarmensaje();
+                cod_alumno = 1;// Int32.Parse(Request.QueryString["cod_alumno"].ToString());
+                cargarmensaje(sender,e);
             }
         }
 
-        public void cargarmensaje()
+        public void cargarmensaje(object sender, EventArgs e)
         {
 
-            if (ws.ListarNotaAlumno(cod_alumno).Count() > 0)
-            {
-                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
-            }
-            else
-            {
-                lblmensaje.Text = "El Alumno no debe ninguna materia académica.";
-            }
-
-            //Criterio de error 1: Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.
-
-//Criterio de aceptación 1: El Alumno no debe ninguna materia académica.
-
+            btndevolucion.Enabled = false;
+            btnestadoD.Enabled = false;
+            btnsitacademica_Click(sender, e);
         }
 
         protected void btnnext_Click(object sender, EventArgs e)
         {
-            if (ws.ListarLibrosPrestados(cod_alumno).Count() >0)
-            {
-                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
-                //Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.
-//Criterio de aceptación 2: El Alumno no tiene devoluciones pendientes.
-            }
-            else
-            {
-                lblmensaje.Text = "El Alumno no tiene devoluciones pendientes.";
-            }
+            
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            if (ws.ListarPagos(cod_alumno).Count() > 0)
-            {
-                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
-                
-
-
-            }
-            else
-            {
-                lblmensaje.Text = "El Alumno no presenta ninguna deuda pendiente.";
-            }
-        }
 
         protected void btnfinish_Click(object sender, EventArgs e)
         {
@@ -90,5 +57,62 @@ namespace ProyectoIDCode
             
 
         }
+
+        protected void btcontinuar_Click(object sender, EventArgs e)
+        {
+
+            if (btndevolucion.Enabled.ToString().Equals("False"))
+            {
+                btndevolucion.Enabled = true;
+                btndevolucion_Click(sender, e);
+            }
+            else if (btnestadoD.Enabled.ToString().Equals("False"))
+            {
+                btnestadoD.Enabled = true;
+                btnestadoD_Click(sender, e);
+            }
+            
+
+        }
+
+        protected void btnsitacademica_Click(object sender, EventArgs e)
+        {
+            if (ws.ListarNotaAlumno(cod_alumno).Count() > 0)
+            {
+                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
+            }
+            else
+            {
+                lblmensaje.Text = "El Alumno no debe ninguna materia académica.";
+            }
+        }
+
+        protected void btndevolucion_Click(object sender, EventArgs e)
+        {
+            if (ws.ListarLibrosPrestados(cod_alumno).Count() > 0)
+            {
+                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
+            }
+            else
+            {
+                lblmensaje.Text = "El Alumno no tiene devoluciones pendientes.";
+            }
+        }
+
+
+        protected void btnestadoD_Click(object sender, EventArgs e)
+        {
+            if (ws.ListarPagos(cod_alumno).Count() > 0)
+            {
+                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
+
+            }
+            else
+            {
+                lblmensaje.Text = "El Alumno no presenta ninguna deuda pendiente.";
+            }
+        }
+
+
     }
 }
