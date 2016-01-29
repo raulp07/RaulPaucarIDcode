@@ -81,6 +81,7 @@
     <Compile Include="Dominio\Nota.cs" />
     <Compile Include="Dominio\ObligacionPago.cs" />
     <Compile Include="Dominio\Padre.cs" />
+    <Compile Include="Dominio\Pago.cs" />
     <Compile Include="Persistencia\AlumnoDAO.cs" />
     <Compile Include="Persistencia\BaseDAO.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
