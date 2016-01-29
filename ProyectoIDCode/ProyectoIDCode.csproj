@@ -632,12 +632,13 @@
     <Content Include="js\plugins\toastr\toastr.min.js" />
     <Content Include="js\plugins\validate\jquery.validate.min.js" />
     <Content Include="js\plugins\video\responsible-video.js" />
-    <Content Include="notas.html" />
+    <Content Include="notas.aspx" />
     <Content Include="observaciones.aspx" />
-    <Content Include="observaciones.html" />
     <Content Include="pagos.aspx" />
-    <Content Include="pagos.html" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="restriccion1.aspx" />
+    <Content Include="restriccion2.aspx" />
+    <Content Include="restriccion3.aspx" />
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Alumno.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -695,6 +696,13 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="MQConexion.cs" />
+    <Compile Include="notas.aspx.cs">
+      <DependentUpon>notas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notas.aspx.designer.cs">
+      <DependentUpon>notas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="observaciones.aspx.cs">
       <DependentUpon>observaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -710,6 +718,27 @@
       <DependentUpon>pagos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="restriccion1.aspx.cs">
+      <DependentUpon>restriccion1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restriccion1.aspx.designer.cs">
+      <DependentUpon>restriccion1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="restriccion2.aspx.cs">
+      <DependentUpon>restriccion2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restriccion2.aspx.designer.cs">
+      <DependentUpon>restriccion2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="restriccion3.aspx.cs">
+      <DependentUpon>restriccion3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="restriccion3.aspx.designer.cs">
+      <DependentUpon>restriccion3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WSMatricula\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

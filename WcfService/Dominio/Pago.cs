@@ -11,10 +11,10 @@ namespace WcfService.Dominio
     public class Pago
     {
          [DataMember]
-        public int cod_pago { get; set; }
+         public int cd_pago { get; set; }
 
          [DataMember]
-        public Alumno alu { get; set; }
+         public Alumno cd_alumno { get; set; }
 
          [DataMember]
         public string ds_pago { get; set; }

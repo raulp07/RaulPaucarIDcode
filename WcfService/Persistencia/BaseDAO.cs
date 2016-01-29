@@ -109,7 +109,7 @@ namespace WcfService.Persistencia
              using (ISession sesion = NHibernateHelper.ObtenerSesion())
              {
                  ICriteria query = sesion.CreateCriteria(typeof(Pago));
-                 query.Add(Restrictions.Eq("alu.cd_alumno", codigo));
+                 query.Add(Restrictions.Eq("cd_alumno.cd_alumno", codigo));
                  IList<Entidad> lista = query.List<Entidad>();
                  return lista;
              }

@@ -65,8 +65,7 @@ namespace ProyectoIDCode
             {
                 btndevolucion.Enabled = true;
                 btndevolucion_Click(sender, e);
-            }
-            else if (btnestadoD.Enabled.ToString().Equals("False"))
+            }else if (btnestadoD.Enabled.ToString().Equals("False"))
             {
                 btnestadoD.Enabled = true;
                 btnestadoD_Click(sender, e);

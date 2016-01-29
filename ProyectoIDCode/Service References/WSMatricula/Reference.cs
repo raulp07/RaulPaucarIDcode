@@ -565,10 +565,10 @@ namespace ProyectoIDCode.WSMatricula {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ProyectoIDCode.WSMatricula.Alumno aluField;
+        private ProyectoIDCode.WSMatricula.Alumno cd_alumnoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int cod_pagoField;
+        private int cd_pagoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ds_estadoField;
@@ -593,27 +593,27 @@ namespace ProyectoIDCode.WSMatricula {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ProyectoIDCode.WSMatricula.Alumno alu {
+        public ProyectoIDCode.WSMatricula.Alumno cd_alumno {
             get {
-                return this.aluField;
+                return this.cd_alumnoField;
             }
             set {
-                if ((object.ReferenceEquals(this.aluField, value) != true)) {
-                    this.aluField = value;
-                    this.RaisePropertyChanged("alu");
+                if ((object.ReferenceEquals(this.cd_alumnoField, value) != true)) {
+                    this.cd_alumnoField = value;
+                    this.RaisePropertyChanged("cd_alumno");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int cod_pago {
+        public int cd_pago {
             get {
-                return this.cod_pagoField;
+                return this.cd_pagoField;
             }
             set {
-                if ((this.cod_pagoField.Equals(value) != true)) {
-                    this.cod_pagoField = value;
-                    this.RaisePropertyChanged("cod_pago");
+                if ((this.cd_pagoField.Equals(value) != true)) {
+                    this.cd_pagoField = value;
+                    this.RaisePropertyChanged("cd_pago");
                 }
             }
         }

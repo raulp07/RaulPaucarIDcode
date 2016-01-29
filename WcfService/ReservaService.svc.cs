@@ -124,38 +124,6 @@ namespace WcfService
         }
 
  
-        //public List<Nota> ConsultarSituacionAcademicaXalumno(int cd_alumno)
-        //{
-
-        //    return NotaDAO.ListarSituacionAcademica(cd_alumno).ToList();
-        //}
-
-
-        //public List<LibroPendiente> ConsultarLibrosPendientes(int cd_alumno)
-        //{
-        //    return LibroPendienteDAO.ListarSituacionAcademica(cd_alumno).ToList();
-        //}
-
-       /* public DataTable listaralumno()
-        {
-            DataTable tb = new DataTable();
-            tb.Columns.Add("cd_alumno");
-            tb.Columns.Add("ds_nombre");
-            tb.Columns.Add("ds_apellido");
-            tb.Columns.Add("cd_grado");
-
-            foreach (var item in AlumnoDAO.ListarTodos())
-            {
-                DataRow r = tb.NewRow();
-                r["cd_alumno"] = item.cd_alumno;
-                r["ds_nombre"] = item.ds_nombre;
-                r["ds_apellido"] = item.ds_apellido;
-                r["cd_grado"] = item.cd_grado;
-                tb.Rows.Add(r);
-            }
-            return tb;
-        }*/
-
         public List<Alumno> ListarAlumno(int id_padre)
         {
             return AlumnoDAO.ListarAlumno(id_padre).ToList();
