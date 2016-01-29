@@ -10,3 +10,4 @@
     <property name="ds_pago" column="ds_pago" />
   </class>
 </hibernate-mapping>
+
