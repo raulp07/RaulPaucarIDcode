@@ -4,15 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
 using System.Data;
+using ProyectoIDCode.WSMatricula;
+
 
 namespace ProyectoIDCode
 {
     public partial class index : System.Web.UI.Page
     {
-        
 
+        WSMatricula.ReservaServiceClient alu = new WSMatricula.ReservaServiceClient();
+        
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -24,12 +27,32 @@ namespace ProyectoIDCode
 
         private void cargaralumnos()
         {
-            SqlConnection cn = new SqlConnection("Data Source=DESKTOP-74PRT41\\SQLEXPRESS;Initial Catalog=BD_IDCode;Integrated Security=true;");
+            //SqlConnection cn = new SqlConnection("Data Source=DESKTOP-74PRT41\\SQLEXPRESS;Initial Catalog=BD_IDCode;Integrated Security=true;");
+            //DataTable tb = new DataTable();
+            //SqlCommand cmd = new SqlCommand("listar_alumnos", cn);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //da.Fill(tb);
+
             DataTable tb = new DataTable();
-            SqlCommand cmd = new SqlCommand("listar_alumnos", cn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(tb);
+            tb.Columns.Add("cd_alumno");
+            tb.Columns.Add("ds_nombre");
+            tb.Columns.Add("ds_apellido");
+            tb.Columns.Add("cd_grado");
+            
+            Array alumno =  alu.ListarAlumno(1);
+            
+            foreach (var item in alumno)
+            {
+                Alumno x = (Alumno) item;
+                DataRow r = tb.NewRow();
+                r["cd_alumno"] = x.cd_alumno;
+                r["ds_nombre"] = x.ds_nombre;
+                r["ds_apellido"] = x.ds_apellido;
+                r["cd_grado"] = ((ObligacionPago) x.cd_grado).ds_grado;
+                tb.Rows.Add(r);
+
+            }
             lvalumnos.DataSource = tb;
             lvalumnos.DataBind();
         }

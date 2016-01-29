@@ -9,7 +9,7 @@ namespace WcfService.Persistencia
     {
         public static string ObtenerCadena()
         {
-            return "Data Source=DESKTOP-74PRT41\\SQLEXPRESS;Initial Catalog=BD_IDCode;Integrated Security=true;";
+            return "Data Source=DESKTOP-74PRT41\\SQLEXPRESS;Initial Catalog=BD_IDCode;Integrated Security=SSPI;";
         }
     }
 }

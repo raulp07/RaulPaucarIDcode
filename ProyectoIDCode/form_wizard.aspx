@@ -234,37 +234,49 @@
                             Validar las siguientes restrciones
                         </p>
                         <div id="wizard">
-                            <h1>Situacion Académica</h1>
-                            <div class="step-content">
-                                <div class="text-center m-t-md">
-                                <h2>Aprobado</h2>
-                                <p>
-                                    EL Alumno no debe nunguna materia académica.
-                                </p>
-                                </div>
-                            </div>
+                            <%--<h1>Situacion Académica</h1>--%>
+                            <asp:Button ID="btnsitacademica" runat="server" Text="Situacion Académica" class="btn btn-primary btn-sm" />
+                            
 
-                            <h1>Devolución de libros</h1>
-                            <div class="step-content">
-                                <div class="text-center m-t-md">
-                                    <h2>Completo</h2>
-                                    <p>
-                                        El alumno no presenta ningun prestamo de libro pendiente.
-                                    </p>
-                                </div>
-                            </div>
+                            <%--<h1>Devolución de libros</h1>--%>
+                            <asp:Button ID="btndevolucion" runat="server" Text="Devolución de libros" class="btn btn-primary btn-sm" />
+                            
 
-                            <h1>Estado de deudas</h1>
-                            <div class="step-content">
-                                <div class="text-center m-t-md">
-                                    <h2>Cancelado</h2>
-                                    <p>
-                                        El alumno no presenta ninguna deuda pendiente.
-                                    </p>
-                                </div>
-                            </div>
+                            <%--<h1>Estado de deudas</h1>--%>
+                            <asp:Button ID="Button1" runat="server" Text="Devolución de libros" class="btn btn-primary btn-sm" OnClick="Button1_Click" />
+                            
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblmensaje" runat="server" Text="Label"></asp:Label>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            
                         </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:Button ID="btnprevius" runat="server" Text="Previus" class="btn btn-primary btn-sm" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>
+                                        <asp:Button ID="btnnext" runat="server" Text="Next" class="btn btn-primary btn-sm" OnClick="btnnext_Click" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                    <td>
+                                        <asp:Button ID="btnfinish" runat="server" Text="Finish" class="btn btn-primary btn-sm" OnClick="btnfinish_Click" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                    <td>
+                                        <asp:Button ID="btncancel" runat="server" Text="Cancel" class="btn btn-primary btn-sm" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                </tr>
 
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -309,23 +321,23 @@
                 bodyTag: "fieldset",
                 onStepChanging: function (event, currentIndex, newIndex) {
                     // Always allow going backward even if the current step contains invalid fields!
-                    if (currentIndex > newIndex) {
-                        return true;
-                    }
+                    //if (currentIndex > newIndex) {
+                    //    return true;
+                    //}
 
-                    // Forbid suppressing "Warning" step if the user is to young
-                    if (newIndex === 3 && Number($("#age").val()) < 18) {
-                        return false;
-                    }
+                    //// Forbid suppressing "Warning" step if the user is to young
+                    //if (newIndex === 3 && Number($("#age").val()) < 18) {
+                    //    return false;
+                    //}
 
-                    var form = $(this);
+                    //var form = $(this);
 
-                    // Clean up if user went backward before
-                    if (currentIndex < newIndex) {
-                        // To remove error styles
-                        $(".body:eq(" + newIndex + ") label.error", form).remove();
-                        $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
-                    }
+                    //// Clean up if user went backward before
+                    //if (currentIndex < newIndex) {
+                    //    // To remove error styles
+                    //    $(".body:eq(" + newIndex + ") label.error", form).remove();
+                    //    $(".body:eq(" + newIndex + ") .error", form).removeClass("error");
+                    //}
 
                     // Disable validation on fields that are disabled or hidden.
                     form.validate().settings.ignore = ":disabled,:hidden";

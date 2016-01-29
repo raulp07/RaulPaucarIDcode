@@ -7,22 +7,12 @@ using System.ServiceModel.Web;
 using System.Text;
 using WcfService.Dominio;
 using WcfService.Persistencia;
+using System.Data;
 
 namespace WcfService
 {
     public class ReservaService : IReservaService
     {
-
-        private AlumnoCursoDAO alumnoCursoDAO = null;
-        private AlumnoCursoDAO AlumnoCursoDAO
-        {
-            get
-            {
-                if(alumnoCursoDAO == null)
-                    alumnoCursoDAO = new AlumnoCursoDAO();
-                return alumnoCursoDAO;
-            }
-        }
 
         private AlumnoDAO alumnoDAO = null;
         private AlumnoDAO AlumnoDAO
@@ -34,6 +24,30 @@ namespace WcfService
                 return alumnoDAO;
             }
         }
+
+        private NotaDAO notaDAO = null;
+        private NotaDAO NotaDAO
+        {
+            get
+            {
+                if (notaDAO == null)
+                    notaDAO = new NotaDAO();
+                return notaDAO;
+            }
+        }
+
+        private PagoDAO pagoDAO = null;
+        private PagoDAO PagoDAO
+        {
+            get
+            {
+                if (pagoDAO == null)                
+                    pagoDAO = new PagoDAO();
+                    return pagoDAO;                
+            }
+        }
+
+
 
         private PadreDAO padreDAO = null;
         private PadreDAO PadreDAO
@@ -57,6 +71,18 @@ namespace WcfService
             }
         }
 
+        private LibroPendienteDAO libroPendienteDAO = null;
+        private LibroPendienteDAO LibroPendienteDAO
+        {
+            get
+            {
+                if (libroPendienteDAO == null)
+                    libroPendienteDAO = new LibroPendienteDAO();
+                return libroPendienteDAO;
+            }
+        }
+
+
         private ReservaMatriculaDAO reservaMatriculaDAO = null;
         private ReservaMatriculaDAO ReservaMatriculaDAO
         {
@@ -68,24 +94,22 @@ namespace WcfService
             }
         }
 
-        public Alumno ConsultarAlumno(int cd_alumno)
+
+
+
+
+        public Dominio.Alumno ConsultarAlumno(int cd_alumno)
         {
             return AlumnoDAO.Obtener(cd_alumno);
         }
 
-        public AlumnoCurso ConsultarSituacionAcademica(int cd_alumno)
-        {
-            return AlumnoCursoDAO.Obtener(cd_alumno);
-        }
-
-
-        public Padre ConsultarPadre(int cd_padre)
+        public Dominio.Padre ConsultarPadre(int cd_padre)
         {
             return PadreDAO.Obtener(cd_padre);
         }
 
 
-        public Alumno registarAlumno(int cd_padre, string ds_nombre, int cd_grado, string ds_apellido)
+        public Dominio.Alumno registarAlumno(int cd_padre, string ds_nombre, int cd_grado, string ds_apellido)
         {
             Padre padreExistente = PadreDAO.Obtener(cd_padre);
             ObligacionPago obligacionPago = ObligacionPagoDAO.Obtener(cd_grado);
@@ -99,23 +123,80 @@ namespace WcfService
             return AlumnoDAO.Crear(alumnoAregistrar);
         }
 
-        public ReservaMatricula CrearReserva(int codigoAlumno, DateTime fechaReserva, char estado, double monto)
+ 
+        //public List<Nota> ConsultarSituacionAcademicaXalumno(int cd_alumno)
+        //{
+
+        //    return NotaDAO.ListarSituacionAcademica(cd_alumno).ToList();
+        //}
+
+
+        //public List<LibroPendiente> ConsultarLibrosPendientes(int cd_alumno)
+        //{
+        //    return LibroPendienteDAO.ListarSituacionAcademica(cd_alumno).ToList();
+        //}
+
+       /* public DataTable listaralumno()
         {
-            Alumno alumno = AlumnoDAO.Obtener(codigoAlumno);
+            DataTable tb = new DataTable();
+            tb.Columns.Add("cd_alumno");
+            tb.Columns.Add("ds_nombre");
+            tb.Columns.Add("ds_apellido");
+            tb.Columns.Add("cd_grado");
+
+            foreach (var item in AlumnoDAO.ListarTodos())
+            {
+                DataRow r = tb.NewRow();
+                r["cd_alumno"] = item.cd_alumno;
+                r["ds_nombre"] = item.ds_nombre;
+                r["ds_apellido"] = item.ds_apellido;
+                r["cd_grado"] = item.cd_grado;
+                tb.Rows.Add(r);
+            }
+            return tb;
+        }*/
+
+        public List<Alumno> ListarAlumno(int id_padre)
+        {
+            return AlumnoDAO.ListarAlumno(id_padre).ToList();
+        }
+
+        public List<Nota> ListarNotaAlumno(int cd_alumno)
+        {
+            return NotaDAO.ListarNotasDesaprobadas(cd_alumno).ToList();
+        }
+        public List<Pago> ListarPagos(int cd_alumno)
+        {
+            return PagoDAO.ListarPagos(cd_alumno).ToList();
+        }
+        public List<LibroPendiente> ListarLibrosPrestados(int codigo)
+        {
+            return LibroPendienteDAO.ListarLibrosPrestados(codigo).ToList();
+        }
+
+
+
+
+        public ReservaMatricula registarReserva(int cd_alumno)
+        {
+            Alumno alumno = AlumnoDAO.Obtener(cd_alumno);
+
+            string estado = "Reserv";
             ReservaMatricula reserva = new ReservaMatricula()
             {
                 Alumno = alumno,
-                FechaReserva = fechaReserva,
-                Estado = estado,
-                Monto = monto
+                FechaReserva=DateTime.Now,
+                Estado = 'R',
+                Monto = double.Parse( alumno.cd_grado.qt_monto.ToString())
+
             };
             return ReservaMatriculaDAO.Crear(reserva);
         }
 
-        public void CancelarReserva(int codigoReserva)
-        {
-            ReservaMatricula reserva = ReservaMatriculaDAO.Obtener(codigoReserva);
-            ReservaMatriculaDAO.Eliminar(reserva);
-        }
+       
+
+
+
+
     }
 }

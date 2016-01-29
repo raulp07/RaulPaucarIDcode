@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReservaService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:4920/ReservaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:4920/ReservaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:4920/ReservaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService.Dominio" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReservaService_ConsultarAlumno_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ConsultarAlumno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ConsultarPadre_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPadre" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ConsultarPadre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarPadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_registarAlumno_InputMessage">
+    <wsdl:part name="parameters" element="tns:registarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_registarAlumno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ListarAlumno_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAlumno" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ListarAlumno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ListarNotaAlumno_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarNotaAlumno" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ListarNotaAlumno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarNotaAlumnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ListarLibrosPrestados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarLibrosPrestados" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ListarLibrosPrestados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarLibrosPrestadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ListarPagos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPagos" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_ListarPagos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_registarReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:registarReserva" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_registarReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registarReservaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReservaService">
+    <wsdl:operation name="ConsultarAlumno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ConsultarAlumno" message="tns:IReservaService_ConsultarAlumno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ConsultarAlumnoResponse" message="tns:IReservaService_ConsultarAlumno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPadre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ConsultarPadre" message="tns:IReservaService_ConsultarPadre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ConsultarPadreResponse" message="tns:IReservaService_ConsultarPadre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registarAlumno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/registarAlumno" message="tns:IReservaService_registarAlumno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/registarAlumnoResponse" message="tns:IReservaService_registarAlumno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAlumno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ListarAlumno" message="tns:IReservaService_ListarAlumno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ListarAlumnoResponse" message="tns:IReservaService_ListarAlumno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarNotaAlumno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ListarNotaAlumno" message="tns:IReservaService_ListarNotaAlumno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ListarNotaAlumnoResponse" message="tns:IReservaService_ListarNotaAlumno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarLibrosPrestados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ListarLibrosPrestados" message="tns:IReservaService_ListarLibrosPrestados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ListarLibrosPrestadosResponse" message="tns:IReservaService_ListarLibrosPrestados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPagos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ListarPagos" message="tns:IReservaService_ListarPagos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ListarPagosResponse" message="tns:IReservaService_ListarPagos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registarReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/registarReserva" message="tns:IReservaService_registarReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/registarReservaResponse" message="tns:IReservaService_registarReserva_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IReservaService" type="tns:IReservaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarAlumno">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/ConsultarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPadre">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/ConsultarPadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registarAlumno">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/registarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAlumno">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/ListarAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarNotaAlumno">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/ListarNotaAlumno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarLibrosPrestados">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/ListarLibrosPrestados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPagos">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/ListarPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registarReserva">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/registarReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReservaService">
+    <wsdl:port name="BasicHttpBinding_IReservaService" binding="tns:BasicHttpBinding_IReservaService">
+      <soap:address location="http://localhost:4920/ReservaService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

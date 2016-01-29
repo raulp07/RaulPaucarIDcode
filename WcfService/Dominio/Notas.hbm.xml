@@ -3,9 +3,12 @@
                    assembly="WcfService"
                    namespace="WcfService.Dominio"
                    default-lazy="false">
-  <class name="AlumnoCurso" table="tb_alumno_curso">
-    <many-to-one name="cd_alumno" column="cd_alumno" />
-    <many-to-one name="cd_curso" column="cd_curso" />
+  <class name="Nota" table="tb_nota">
+    <id name="cd_nota" column="cd_nota">
+      <generator class="increment" />
+    </id>
     <property name="qt_nota" column="qt_nota" />
+    <property name="desc_curso" column="desc_curso" />
+    <many-to-one name="cd_alumno" column="cd_alumno" />
   </class>
 </hibernate-mapping>

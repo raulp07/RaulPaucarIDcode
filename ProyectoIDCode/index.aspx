@@ -301,15 +301,24 @@
                                             <table>
                                                 <tr>
                                                     <td>
+                                                        Nombre : 
+                                                    </td>
+                                                    <td>
                                                         <asp:Label ID="lblnombre" runat="server" Text='<%# Eval("ds_nombre") %>'></asp:Label>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
+                                                        Apellido : 
+                                                    </td>
+                                                    <td>
                                                         <asp:Label ID="lblapellido" runat="server" Text='<%#  Eval("ds_apellido")%>'></asp:Label>
                                                     </td>
                                                 </tr>
                                                 <tr>
+                                                    <td>
+                                                        Grado escolar: 
+                                                    </td>
                                                     <td>
                                                         <asp:Label ID="lblgrado" runat="server" Text='<%# Eval("cd_grado") %>'></asp:Label>
                                                     </td>

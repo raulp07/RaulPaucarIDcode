@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoIDCode", "ProyectoIDCode\ProyectoIDCode.csproj", "{A03484DC-6297-47E3-AD08-82960B3621F0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D4BFA679-11FB-42A4-89C1-5522506317D5} = {D4BFA679-11FB-42A4-89C1-5522506317D5}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{D4BFA679-11FB-42A4-89C1-5522506317D5}"
 EndProject

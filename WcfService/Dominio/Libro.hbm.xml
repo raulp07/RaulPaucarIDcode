@@ -3,10 +3,11 @@
                    assembly="WcfService"
                    namespace="WcfService.Dominio"
                    default-lazy="false">
-  <class name="Curso" table="tb_curso">
-    <id name="cd_curso" column="cd_curso">
+  <class name="Libro" table="tb_libro">
+    <id name="cd_libro" column="cd_libro">
       <generator class="increment" />
     </id>
-    <property name="ds_curso" column="ds_curso" />
+    <property name="ds_titulo" column="ds_titulo" />
+    <property name="ds_autor" column="ds_autor" />
   </class>
 </hibernate-mapping>

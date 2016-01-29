@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using WcfService.Dominio;
+using System.Data;
+using System.Web.Services;
 
 namespace WcfService
 {
@@ -13,8 +15,10 @@ namespace WcfService
     [ServiceContract]
     public interface IReservaService
     {
-        [OperationContract]
-        AlumnoCurso ConsultarSituacionAcademica(int cd_alumno);
+
+
+        //[OperationContract]
+        //List<Nota> ConsultarSituacionAcademicaXalumno(int cd_alumno);
 
         [OperationContract]
         Alumno ConsultarAlumno(int cd_alumno);
@@ -25,11 +29,22 @@ namespace WcfService
         [OperationContract]
         Alumno registarAlumno(int cd_padre,string ds_nombre,int cd_grado,string ds_apellido);
 
-        [OperationContract]
-        ReservaMatricula CrearReserva(int codigoAlumno, DateTime fechaReserva, char estado, double monto);
+        //[OperationContract]
+        //List<LibroPendiente> ConsultarLibrosPendientes(int cd_alumno);
 
         [OperationContract]
-        void CancelarReserva(int codigoReserva);
+        List<Alumno> ListarAlumno(int id_padre);
+
+        [OperationContract]
+        List<Nota> ListarNotaAlumno(int cd_alumno);
+
+        [OperationContract]
+        List<LibroPendiente> ListarLibrosPrestados(int codigo);
+        [OperationContract]
+        List<Pago> ListarPagos(int cd_alumno);
+        [OperationContract]
+        ReservaMatricula registarReserva(int cd_alumno);
     }
+
 
 }

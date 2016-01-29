@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WcfService"
+                   namespace="WcfService.Dominio"
+                   default-lazy="false">
+  <class name="LibroPendiente" table="tb_libro_pendiente">
+    <id name="cd_pendiente" column="cd_pendiente">
+      <generator class="increment" />
+    </id>
+    <property name="dt_fecha_prestamo" column="dt_fecha_prestamo" />
+    <property name="dt_fecha_devolucion" column="dt_fecha_devolucion" />
+    <many-to-one name="cd_alumno" column="cd_alumno" />
+    <many-to-one name="cd_libro" column="cd_libro" />
+  </class>
+</hibernate-mapping>

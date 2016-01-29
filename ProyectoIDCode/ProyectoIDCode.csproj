@@ -43,6 +43,8 @@
       <HintPath>..\amqmdnet.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -630,6 +632,32 @@
     <Content Include="js\plugins\toastr\toastr.min.js" />
     <Content Include="js\plugins\validate\jquery.validate.min.js" />
     <Content Include="js\plugins\video\responsible-video.js" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Alumno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Padre.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Nota.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.LibroPendiente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Pago.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.ReservaMatricula.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSMatricula\ReservaService.disco" />
+    <None Include="Service References\WSMatricula\configuration91.svcinfo" />
+    <None Include="Service References\WSMatricula\configuration.svcinfo" />
+    <None Include="Service References\WSMatricula\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -649,6 +677,11 @@
     </Compile>
     <Compile Include="MQConexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WSMatricula\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\plugins\bootstrap-rtl\bootstrap-rtl.css.map" />
@@ -714,6 +747,16 @@
     <Content Include="scss\top_navigation.scss" />
     <Content Include="scss\typography.scss" />
     <Content Include="scss\variables.scss" />
+    <None Include="Service References\WSMatricula\ReservaService.wsdl" />
+    <None Include="Service References\WSMatricula\ReservaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSMatricula\ReservaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSMatricula\ReservaService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -721,6 +764,13 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WSMatricula\" />
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
