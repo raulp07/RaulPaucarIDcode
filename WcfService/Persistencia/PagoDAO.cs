@@ -9,4 +9,5 @@ namespace WcfService.Persistencia
     public class PagoDAO : BaseDAO<Pago, int>
     {
     }
+
 }
