@@ -5,6 +5,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+
+    <style type="text/css">
+        #bloqueoPagina {
+            background: #000000;
+            width: 100%;
+            height: 1100px;
+            opacity: 0.7;
+            margin: 0px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            z-index: 1000;
+            margin: 0px;
+            padding: 0px; /* display: none;*/
+        }
+
+        #Mensaje {
+            z-index: 10001;
+            position: absolute;
+            margin: 150px 140px 0 200px;
+            background-color: #FFFFFF;
+            top: 99px;
+            left: 354px;
+        }
+
+            #Mensaje p {
+                color: #000;
+            }
+    </style>
 </head>
 <body>
 
@@ -21,9 +51,48 @@
     <link href="css/style.css" rel="stylesheet">
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+            <ContentTemplate>
+                <asp:Panel runat="server" ID="pnl_mensajeFinal" Visible="false">
+                    <div id="bloqueoPagina"></div>
+                    <div id="Mensaje" class="ibox-content">
+                        <table>
+                            <tr>
+                                <td>Codigo unico de matricula :</td>
+                                <td>
+                                    <asp:Label ID="lblmsj1" runat="server" Text="Label"></asp:Label>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>Nombre de Alumno :</td>
+                                <td>
+                                    <asp:Label ID="lblmsj2" runat="server" Text="Label"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pago a realizar :</td>
+                                <td>
+                                    <asp:Label ID="lblmsj3" runat="server" Text="Label"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fecha de reserva : </td>
+                                <td>
+                                    <asp:Label ID="lblmsj4" runat="server" Text="Label"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button runat="server" ID="btn_aceptar" Text="Aceptar" OnClick="btn_aceptar_Click" class="btn btn-primary btn-sm"></asp:Button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </asp:Panel>
+            </ContentTemplate>
+        </asp:UpdatePanel>
 
         <div id="wrapper">
-
             <nav class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="side-menu">
@@ -50,10 +119,10 @@
                             <a href="#"><i class="fa fa-desktop"></i><span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
                             <ul class="nav nav-second-level">
                                 <li class="active"><a href="contacts.html">Matrícula 2016</a></li>
-                                <li><a href="profile.html">Notas Académicas</a></li>
-                                <li><a href="projects.html">Horario Académico</a></li>
-                                <li><a href="project_detail.html">Datos Personales</a></li>
-                                <li><a href="file_manager.html">Pagos y deudas</a></li>
+                                <li><a href="#">Notas Académicas</a></li>
+                                <li><a href="#">Horario Académico</a></li>
+                                <li><a href="#">Datos Personales</a></li>
+                                <li><a href="#">Pagos y deudas</a></li>
                             </ul>
                         </li>
 
@@ -235,11 +304,15 @@
                                 </div>
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
+
+
+
+
                                         <div class="ibox-content">
                                             <p>
                                                 Validar las siguientes restrciones
                                             </p>
-                                            <div id="wizard">
+                                            <div <%--id="wizard"--%>>
                                                 <%--<h1>Situacion Académica</h1>--%>
                                                 <asp:Button ID="btnsitacademica" runat="server" Text="Situacion Académica" class="btn btn-primary btn-sm" OnClick="btnsitacademica_Click" />
 
@@ -250,7 +323,9 @@
 
                                                 <%--<h1>Estado de deudas</h1>--%>
                                                 <asp:Button ID="btnestadoD" runat="server" Text="Estado de deudas" class="btn btn-primary btn-sm" OnClick="btnestadoD_Click" />
+                                                <div class="ibox-content">
 
+                                                
                                                 <table>
                                                     <tr>
                                                         <td>
@@ -259,7 +334,7 @@
                                                     </tr>
                                                 </table>
 
-
+                                                </div>
                                             </div>
                                             <div>
                                                 <table>
@@ -269,15 +344,11 @@
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         </td>
                                                         <td>
-                                                            <asp:Button ID="btnnext" runat="server" Text="Next" class="btn btn-primary btn-sm" OnClick="btnnext_Click" />
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                        </td>
-                                                        <td>
                                                             <asp:Button ID="btnfinish" runat="server" Text="Finish" class="btn btn-primary btn-sm" OnClick="btnfinish_Click" />
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         </td>
                                                         <td>
-                                                            <asp:Button ID="btncancel" runat="server" Text="Cancel" class="btn btn-primary btn-sm" />
+                                                            <asp:Button ID="btncancel" runat="server" Text="Cancel" class="btn btn-primary btn-sm" OnClick="btncancel_Click" />
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         </td>
                                                     </tr>

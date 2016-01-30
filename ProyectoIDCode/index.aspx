@@ -45,11 +45,11 @@
                         <li class="active">
                             <a href="#"><i class="fa fa-desktop"></i><span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
                             <ul class="nav nav-second-level">
-                                <li class="active"><a href="contacts.html">Matrícula 2016</a></li>
-                                <li><a href="profile.html">Notas Académicas</a></li>
+                                <li class="active"><a href="index.aspx">Matrícula 2016</a></li>
+                                <%--<li><a href="profile.html">Notas Académicas</a></li>
                                 <li><a href="projects.html">Horario Académico</a></li>
                                 <li><a href="project_detail.html">Datos Personales</a></li>
-                                <li><a href="file_manager.html">Pagos y deudas</a></li>
+                                <li><a href="file_manager.html">Pagos y deudas</a></li>--%>
                             </ul>
                         </li>
 
