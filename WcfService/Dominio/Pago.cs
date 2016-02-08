@@ -14,5 +14,6 @@ namespace WcfService.Dominio
         [DataMember]
         public string ds_pago { get; set; }
 
+
     }
 }
