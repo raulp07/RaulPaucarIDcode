@@ -51,7 +51,7 @@ namespace WcfService.Persistencia
                 return busqueda.List<Entidad>();
             }
         }
-         public ICollection<Entidad> ListarAlumno(int codigo)
+         public ICollection<Entidad> ListarAlumno(string codigo)
         {
 
            /* Alumno alumno = new Alumno();
@@ -61,7 +61,7 @@ namespace WcfService.Persistencia
             {
 
                 ICriteria query = sesion.CreateCriteria(typeof(Alumno));
-                query.Add(Restrictions.Eq("cd_padre.cd_padre", codigo));
+                query.Add(Restrictions.Eq("cd_padre", codigo));
                 IList<Entidad> lista = query.List<Entidad>();
                 return lista;
             }
@@ -78,38 +78,66 @@ namespace WcfService.Persistencia
                  int inicio = 0;
                  int fin = 10;
                  ICriteria query = sesion.CreateCriteria(typeof(Nota));
-                 query.Add(Restrictions.Eq("cd_alumno.cd_alumno", codigo));
+                 query.Add(Restrictions.Eq("cd_alumno", codigo));
                  query.Add(Restrictions.Between("qt_nota",inicio,fin));
                  IList<Entidad> lista = query.List<Entidad>();
                  return lista;
              }
          }
 
-
+         // Johnny Rivera Barzola
+        
          public ICollection<Entidad> ListarLibrosPrestados(int codigo)
          {
 
-             /* Alumno alumno = new Alumno();
-              alumno.cd_padre.cd_padre = codigo;*/
 
              using (ISession sesion = NHibernateHelper.ObtenerSesion())
              {                
                  ICriteria query = sesion.CreateCriteria(typeof(LibroPendiente));
-                 query.Add(Restrictions.Eq("cd_alumno.cd_alumno", codigo));
+                 query.Add(Restrictions.Eq("cd_alumno", codigo));
                  IList<Entidad> lista = query.List<Entidad>();
                  return lista;
              }
          }
+
+         // Johnny Rivera Barzola
+
          public ICollection<Entidad> ListarPagos(int codigo)
          {
-
-             /* Alumno alumno = new Alumno();
-              alumno.cd_padre.cd_padre = codigo;*/
 
              using (ISession sesion = NHibernateHelper.ObtenerSesion())
              {
                  ICriteria query = sesion.CreateCriteria(typeof(Pago));
-                 query.Add(Restrictions.Eq("cd_alumno.cd_alumno", codigo));
+                 query.Add(Restrictions.Eq("cd_alumno", codigo));
+                 IList<Entidad> lista = query.List<Entidad>();
+                 return lista;
+             }
+         }
+
+        // Johnny Rivera Barzola
+
+         public ICollection<Entidad> ListarNotasAlumno(int codigo)
+         {
+
+             using (ISession sesion = NHibernateHelper.ObtenerSesion())
+             {
+                 ICriteria query = sesion.CreateCriteria(typeof(Nota));
+                 query.Add(Restrictions.Eq("cd_alumno", codigo));
+                 IList<Entidad> lista = query.List<Entidad>();
+                 return lista;
+             }
+         }
+
+        // Johnny Rivera Barzola
+
+         public ICollection<Entidad> ListarObservaciones(int codigo)
+         {
+
+
+             using (ISession sesion = NHibernateHelper.ObtenerSesion())
+             {
+                 ICriteria query = sesion.CreateCriteria(typeof(Observacion));
+                 query.Add(Restrictions.Eq("cd_alumno", codigo));
                  IList<Entidad> lista = query.List<Entidad>();
                  return lista;
              }

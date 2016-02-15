@@ -37,11 +37,17 @@
   <wsdl:message name="IReservaService_ListarNotaAlumno_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarNotaAlumnoResponse" />
   </wsdl:message>
-  <wsdl:message name="IReservaService_ListarLibrosPrestados_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListarLibrosPrestados" />
+  <wsdl:message name="IReservaService_registarReserva_InputMessage">
+    <wsdl:part name="parameters" element="tns:registarReserva" />
   </wsdl:message>
-  <wsdl:message name="IReservaService_ListarLibrosPrestados_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListarLibrosPrestadosResponse" />
+  <wsdl:message name="IReservaService_registarReserva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registarReservaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_VerificarSituacionAcademica_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarSituacionAcademica" />
+  </wsdl:message>
+  <wsdl:message name="IReservaService_VerificarSituacionAcademica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarSituacionAcademicaResponse" />
   </wsdl:message>
   <wsdl:message name="IReservaService_ListarPagos_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarPagos" />
@@ -49,11 +55,11 @@
   <wsdl:message name="IReservaService_ListarPagos_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarPagosResponse" />
   </wsdl:message>
-  <wsdl:message name="IReservaService_registarReserva_InputMessage">
-    <wsdl:part name="parameters" element="tns:registarReserva" />
+  <wsdl:message name="IReservaService_ListarObservacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarObservacion" />
   </wsdl:message>
-  <wsdl:message name="IReservaService_registarReserva_OutputMessage">
-    <wsdl:part name="parameters" element="tns:registarReservaResponse" />
+  <wsdl:message name="IReservaService_ListarObservacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarObservacionResponse" />
   </wsdl:message>
   <wsdl:portType name="IReservaService">
     <wsdl:operation name="ConsultarAlumno">
@@ -76,17 +82,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ListarNotaAlumno" message="tns:IReservaService_ListarNotaAlumno_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ListarNotaAlumnoResponse" message="tns:IReservaService_ListarNotaAlumno_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ListarLibrosPrestados">
-      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ListarLibrosPrestados" message="tns:IReservaService_ListarLibrosPrestados_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ListarLibrosPrestadosResponse" message="tns:IReservaService_ListarLibrosPrestados_OutputMessage" />
+    <wsdl:operation name="registarReserva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/registarReserva" message="tns:IReservaService_registarReserva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/registarReservaResponse" message="tns:IReservaService_registarReserva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarSituacionAcademica">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/VerificarSituacionAcademica" message="tns:IReservaService_VerificarSituacionAcademica_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/VerificarSituacionAcademicaResponse" message="tns:IReservaService_VerificarSituacionAcademica_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListarPagos">
       <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ListarPagos" message="tns:IReservaService_ListarPagos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ListarPagosResponse" message="tns:IReservaService_ListarPagos_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="registarReserva">
-      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/registarReserva" message="tns:IReservaService_registarReserva_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/registarReservaResponse" message="tns:IReservaService_registarReserva_OutputMessage" />
+    <wsdl:operation name="ListarObservacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IReservaService/ListarObservacion" message="tns:IReservaService_ListarObservacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IReservaService/ListarObservacionResponse" message="tns:IReservaService_ListarObservacion_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IReservaService" type="tns:IReservaService">
@@ -136,8 +146,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ListarLibrosPrestados">
-      <soap:operation soapAction="http://tempuri.org/IReservaService/ListarLibrosPrestados" style="document" />
+    <wsdl:operation name="registarReserva">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/registarReserva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarSituacionAcademica">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/VerificarSituacionAcademica" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -154,8 +173,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="registarReserva">
-      <soap:operation soapAction="http://tempuri.org/IReservaService/registarReserva" style="document" />
+    <wsdl:operation name="ListarObservacion">
+      <soap:operation soapAction="http://tempuri.org/IReservaService/ListarObservacion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

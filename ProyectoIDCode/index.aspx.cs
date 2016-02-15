@@ -40,7 +40,7 @@ namespace ProyectoIDCode
             tb.Columns.Add("ds_apellido");
             tb.Columns.Add("cd_grado");
             
-            Array alumno =  alu.ListarAlumno(1);
+            Array alumno =  alu.ListarAlumno("1");
             
             foreach (var item in alumno)
             {
@@ -49,12 +49,19 @@ namespace ProyectoIDCode
                 r["cd_alumno"] = x.cd_alumno;
                 r["ds_nombre"] = x.ds_nombre;
                 r["ds_apellido"] = x.ds_apellido;
-                r["cd_grado"] = ((ObligacionPago) x.cd_grado).ds_grado;
+                r["cd_grado"] = x.cd_grado;
                 tb.Rows.Add(r);
 
             }
             lvalumnos.DataSource = tb;
             lvalumnos.DataBind();
+        }
+
+
+        public string traercodimg(string cod)
+        {
+            string cadena = "img/a" + cod +".jpg";
+            return cadena;
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

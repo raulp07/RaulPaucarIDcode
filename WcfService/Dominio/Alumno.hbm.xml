@@ -9,7 +9,7 @@
     </id>
     <property name="ds_nombre" column="ds_nombre" />
     <property name="ds_apellido" column="ds_apellido" />
-    <many-to-one name="cd_padre" column="cd_padre" />
-    <many-to-one name="cd_grado" column="cd_grado" />
+    <property name="cd_padre" column="cd_padre" />
+    <property name="cd_grado" column="cd_grado" />
   </class>
 </hibernate-mapping>

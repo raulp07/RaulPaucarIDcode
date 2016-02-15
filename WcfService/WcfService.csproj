@@ -73,6 +73,8 @@
     <EmbeddedResource Include="Dominio\Notas.hbm.xml" />
     <EmbeddedResource Include="Dominio\Pago.hbm.xml" />
     <EmbeddedResource Include="Dominio\ReservaMatricula.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Observacion.hbm.xml" />
+    <Content Include="LibrosService.svc" />
     <Content Include="ReservaService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -82,9 +84,15 @@
     <Compile Include="Dominio\LibroPendiente.cs" />
     <Compile Include="Dominio\Nota.cs" />
     <Compile Include="Dominio\ObligacionPago.cs" />
+    <Compile Include="Dominio\Observacion.cs" />
     <Compile Include="Dominio\Padre.cs" />
     <Compile Include="Dominio\Pago.cs" />
     <Compile Include="Dominio\ReservaMatricula.cs" />
+    <Compile Include="Dominio\Respuesta.cs" />
+    <Compile Include="ILibrosService.cs" />
+    <Compile Include="LibrosService.svc.cs">
+      <DependentUpon>LibrosService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Persistencia\AlumnoDAO.cs" />
     <Compile Include="Persistencia\BaseDAO.cs" />
     <Compile Include="Persistencia\ConexionUtil.cs" />
@@ -92,6 +100,7 @@
     <Compile Include="Persistencia\NotaDAO.cs" />
     <Compile Include="Persistencia\NHibernateHelper.cs" />
     <Compile Include="Persistencia\ObligacionPagoDAO.cs" />
+    <Compile Include="Persistencia\ObservacionDAO.cs" />
     <Compile Include="Persistencia\PadreDAO.cs" />
     <Compile Include="Persistencia\PagoDAO.cs" />
     <Compile Include="Persistencia\ReservaMatriculaDAO.cs" />

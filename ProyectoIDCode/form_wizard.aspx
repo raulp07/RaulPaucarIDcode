@@ -21,6 +21,20 @@
             margin: 0px;
             padding: 0px; /* display: none;*/
         }
+        #bloqueoPagina2 {
+            background: #000000;
+            width: 100%;
+            height: 1100px;
+            opacity: 0.7;
+            margin: 0px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            z-index: 1000;
+            margin: 0px;
+            padding: 0px; /* display: none;*/
+        }
 
         #Mensaje {
             z-index: 10001;
@@ -89,6 +103,15 @@
                         </table>
                     </div>
                 </asp:Panel>
+
+                <asp:Panel runat="server" ID="Panel1" Visible="false">
+                    <div id="bloqueoPagina2"></div>
+                    <div id="Mensaje2" class="ibox-content">
+
+
+                    </div>
+                </asp:Panel>
+
             </ContentTemplate>
         </asp:UpdatePanel>
 
@@ -122,7 +145,7 @@
                                 <li><a href="#">Notas Académicas</a></li>
                                 <li><a href="#">Horario Académico</a></li>
                                 <li><a href="#">Datos Personales</a></li>
-                                <li><a href="#">Pagos y deudas</a></li>
+                                <li><a href="pagos.aspx">Libros pendientes</a></li>
                             </ul>
                         </li>
 
@@ -330,6 +353,7 @@
                                                     <tr>
                                                         <td>
                                                             <asp:Label ID="lblmensaje" runat="server" Text="Label"></asp:Label>
+                                                            
                                                         </td>
                                                     </tr>
                                                 </table>

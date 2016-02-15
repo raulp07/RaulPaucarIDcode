@@ -294,7 +294,7 @@
                                 <table align="left" class="contact-box" class="col-sm-4">
                                     <tr>
                                         <td class="col-sm-4">
-                                            <asp:Image ID="Image2" runat="server" Width="140" Height="140" ImageUrl="img/a4.jpg" />
+                                            <asp:Image ID="Image2" runat="server" Width="140" Height="140" ImageUrl='<%#traercodimg(Eval("cd_alumno").ToString()) %>' />
 
                                         </td>
                                         <td class="col-sm-8">

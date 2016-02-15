@@ -9,7 +9,7 @@
     </id>
     <property name="dt_fecha_prestamo" column="dt_fecha_prestamo" />
     <property name="dt_fecha_devolucion" column="dt_fecha_devolucion" />
-    <many-to-one name="cd_alumno" column="cd_alumno" />
-    <many-to-one name="cd_libro" column="cd_libro" />
+    <property name="cd_alumno" column="cd_alumno" />
+    <property name="cd_libro" column="cd_libro" />
   </class>
 </hibernate-mapping>

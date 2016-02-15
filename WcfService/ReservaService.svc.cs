@@ -25,6 +25,17 @@ namespace WcfService
             }
         }
 
+        private ObservacionDAO observacionDAO = null;
+        private ObservacionDAO ObservacionDAO
+        {
+            get
+            {
+                if (observacionDAO == null)
+                    observacionDAO = new ObservacionDAO();
+                return observacionDAO;
+            }
+        }
+
         private NotaDAO notaDAO = null;
         private NotaDAO NotaDAO
         {
@@ -46,8 +57,6 @@ namespace WcfService
                     return pagoDAO;                
             }
         }
-
-
 
         private PadreDAO padreDAO = null;
         private PadreDAO PadreDAO
@@ -82,7 +91,6 @@ namespace WcfService
             }
         }
 
-
         private ReservaMatriculaDAO reservaMatriculaDAO = null;
         private ReservaMatriculaDAO ReservaMatriculaDAO
         {
@@ -94,10 +102,6 @@ namespace WcfService
             }
         }
 
-
-
-
-
         public Dominio.Alumno ConsultarAlumno(int cd_alumno)
         {
             return AlumnoDAO.Obtener(cd_alumno);
@@ -108,43 +112,55 @@ namespace WcfService
             return PadreDAO.Obtener(cd_padre);
         }
 
-
         public Dominio.Alumno registarAlumno(int cd_padre, string ds_nombre, int cd_grado, string ds_apellido)
         {
             Padre padreExistente = PadreDAO.Obtener(cd_padre);
             ObligacionPago obligacionPago = ObligacionPagoDAO.Obtener(cd_grado);
             Alumno alumnoAregistrar = new Alumno()
             {
-                cd_padre = padreExistente,
+                cd_padre = "",
                 ds_nombre = ds_nombre,
                 ds_apellido = ds_apellido,
-                cd_grado = obligacionPago
+                cd_grado = 0
             };
             return AlumnoDAO.Crear(alumnoAregistrar);
         }
 
- 
-        public List<Alumno> ListarAlumno(int id_padre)
+        public List<Alumno> ListarAlumno(string id_padre)
         {
             return AlumnoDAO.ListarAlumno(id_padre).ToList();
         }
 
-        public List<Nota> ListarNotaAlumno(int cd_alumno)
+        public Respuesta ListarNotaAlumno(int cd_alumno)
         {
-            return NotaDAO.ListarNotasDesaprobadas(cd_alumno).ToList();
+
+            Respuesta resp; 
+            if (NotaDAO.ListarNotasDesaprobadas(cd_alumno).ToList().Count()>0)
+            {
+                resp = new Respuesta() 
+                {
+                    mensaje = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.",
+                    flag = 0    
+                };
+
+                return resp;
+
+            }
+            else
+            {
+                resp = new Respuesta()
+                {
+                    mensaje = "El Alumno no debe ninguna materia académica.",
+                    flag = 1
+                };
+
+                return resp;
+            }            
         }
-        public List<Pago> ListarPagos(int cd_alumno)
-        {
-            return PagoDAO.ListarPagos(cd_alumno).ToList();
-        }
-        public List<LibroPendiente> ListarLibrosPrestados(int codigo)
-        {
-            return LibroPendienteDAO.ListarLibrosPrestados(codigo).ToList();
-        }
 
+        // Johnny Rivera Barzola
 
-
-
+     
         public ReservaMatricula registarReserva(int cd_alumno)
         {
             Alumno alumno = AlumnoDAO.Obtener(cd_alumno);
@@ -155,14 +171,87 @@ namespace WcfService
                 Alumno = alumno,
                 FechaReserva=DateTime.Now,
                 Estado = 'R',
-                Monto = double.Parse( alumno.cd_grado.qt_monto.ToString())
+                Monto = double.Parse( "1000")//alumno.cd_grado.qt_monto.ToString())
 
             };
             return ReservaMatriculaDAO.Crear(reserva);
         }
 
-       
+        // Johnny Rivera Barzola
 
+        public List<Nota> VerificarSituacionAcademica(int cd_alumno)
+        {
+
+            return NotaDAO.ListarNotasAlumno(cd_alumno).ToList();
+            
+        }
+
+        // Johnny Rivera Barzola
+
+        /*
+        public Respuesta ListarLibrosPrestados(int codigo)
+        {
+            Respuesta resp;
+            if (LibroPendienteDAO.ListarLibrosPrestados(codigo).ToList().Count()>0)
+            {
+                resp = new Respuesta()
+                {
+                    mensaje = "Usted cuenta con libros pendientes por devolver. Por favor, acérquese a la biblioteca.",
+                    flag = 0
+                };
+
+                return resp;
+                
+            }
+            else
+            {
+                resp = new Respuesta()
+                {
+                    mensaje = "El Alumno no tiene devoluciones pendientes.",
+                    flag = 0
+                };
+                return resp;
+            }
+            
+
+        }
+        */
+          
+         
+        // Johnny Rivera Barzola
+
+        public List<Observacion> ListarObservacion(int cd_alumno)
+        {
+            return ObservacionDAO.ListarObservaciones(cd_alumno).ToList();
+        }
+
+
+        public Respuesta ListarPagos(int cd_alumno)
+        {
+            Respuesta resp;
+            if (PagoDAO.ListarPagos(cd_alumno).ToList().Count()>0)
+            {
+                resp = new Respuesta()
+                {
+                    mensaje = "Usted tiene pagos pendientes por cancelar. Por favor, acérquese al área de secretaria.",
+                    flag = 0
+                };
+
+                return resp;
+            }
+            else
+            {
+                resp = new Respuesta()
+                {
+                    mensaje = "El Alumno no presenta ninguna deuda pendiente.",
+                    flag = 0
+                };
+
+                return resp;
+            }
+            
+
+        }
 
 
 

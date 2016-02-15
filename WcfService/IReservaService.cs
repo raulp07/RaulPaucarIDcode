@@ -15,8 +15,6 @@ namespace WcfService
     [ServiceContract]
     public interface IReservaService
     {
-
-
         //[OperationContract]
         //List<Nota> ConsultarSituacionAcademicaXalumno(int cd_alumno);
 
@@ -29,21 +27,30 @@ namespace WcfService
         [OperationContract]
         Alumno registarAlumno(int cd_padre,string ds_nombre,int cd_grado,string ds_apellido);
 
-        //[OperationContract]
-        //List<LibroPendiente> ConsultarLibrosPendientes(int cd_alumno);
+        [OperationContract]
+        List<Alumno> ListarAlumno(string id_padre);
 
         [OperationContract]
-        List<Alumno> ListarAlumno(int id_padre);
+        Respuesta ListarNotaAlumno(int cd_alumno);
 
-        [OperationContract]
-        List<Nota> ListarNotaAlumno(int cd_alumno);
-
-        [OperationContract]
-        List<LibroPendiente> ListarLibrosPrestados(int codigo);
-        [OperationContract]
-        List<Pago> ListarPagos(int cd_alumno);
+        
         [OperationContract]
         ReservaMatricula registarReserva(int cd_alumno);
+
+
+        [OperationContract]
+        List<Nota> VerificarSituacionAcademica(int cd_alumno);
+
+        /*
+        [OperationContract]
+        Respuesta ListarLibrosPrestados(int codigo);
+        */
+         
+        [OperationContract]
+        Respuesta ListarPagos(int cd_alumno);
+
+        [OperationContract]
+        List<Observacion> ListarObservacion(int cd_alumno);
     }
 
 

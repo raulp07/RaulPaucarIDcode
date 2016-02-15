@@ -14,16 +14,17 @@ namespace WcfService.Dominio
          public int cd_pago { get; set; }
 
          [DataMember]
-         public Alumno cd_alumno { get; set; }
+         public int cd_alumno { get; set; }
 
          [DataMember]
         public string ds_pago { get; set; }
 
          [DataMember]
-        public decimal qt_monto { get; set; }
+         public string ds_estado { get; set; }
+
+         [DataMember]
+        public double qt_monto { get; set; }
          [DataMember]
         public DateTime dt_fecha { get; set; }
-         [DataMember]
-        public string ds_estado { get; set; }
     }
 }

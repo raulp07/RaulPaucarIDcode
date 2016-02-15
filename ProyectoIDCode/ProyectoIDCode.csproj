@@ -648,13 +648,13 @@
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Nota.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.LibroPendiente.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Pago.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.ReservaMatricula.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Observacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Respuesta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSMatricula\ReservaService.disco" />
@@ -674,6 +674,7 @@
     <Compile Include="cancelarMatricula.aspx.designer.cs">
       <DependentUpon>cancelarMatricula.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CLASES\LibroPendiente.cs" />
     <Compile Include="datos.aspx.cs">
       <DependentUpon>datos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

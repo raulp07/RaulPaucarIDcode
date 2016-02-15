@@ -5,6 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ProyectoIDCode.WSMatricula;
+using System.Collections.Generic;
+using System.Net;
+using System.IO;
+using ProyectoIDCode.CLASES;
+using System.Web.Script.Serialization;
+
 namespace ProyectoIDCode
 {
     public partial class form_wizard : System.Web.UI.Page
@@ -22,6 +28,9 @@ namespace ProyectoIDCode
             if (!Page.IsPostBack)
             {
                 cod_alumno =  Int32.Parse(Request.QueryString["cod_alumno"].ToString());
+
+                Session["cod_alumno"] =  cod_alumno.ToString();
+                btnfinish.Visible = false;
                 cargarmensaje(sender,e);
             }
         }
@@ -60,6 +69,7 @@ namespace ProyectoIDCode
 
         }
 
+
         protected void btcontinuar_Click(object sender, EventArgs e)
         {
 
@@ -75,59 +85,101 @@ namespace ProyectoIDCode
             
 
         }
-
+        
         protected void btnsitacademica_Click(object sender, EventArgs e)
         {
-            if (ws.ListarNotaAlumno(cod_alumno).Count() > 0)
-            {
-                notas = 0;
-                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
-            }
-            else
-            {
-                notas = 1;
-                lblmensaje.Text = "El Alumno no debe ninguna materia académica.";
-            }
+            
+            Respuesta resp = ws.ListarNotaAlumno(cod_alumno);
+            lblmensaje.Text = resp.mensaje;
+            notas = resp.flag;
+            des_continuar();
             validar_fini();
         }
 
         protected void btndevolucion_Click(object sender, EventArgs e)
         {
-            if (ws.ListarLibrosPrestados(cod_alumno).Count() > 0)
-            {
-                bibli = 0;
-                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
-            }
-            else
-            {
-                bibli = 1;
-                lblmensaje.Text = "El Alumno no tiene devoluciones pendientes.";
-            }
+
+            HttpWebRequest req1 = (HttpWebRequest)WebRequest
+                .Create("http://localhost:4920/LibrosService.svc/LibrosPendientes/a100");
+            req1.Method = "GET";
+            HttpWebResponse res1 = null;
+           
+                res1 = (HttpWebResponse)req1.GetResponse();
+                StreamReader reader1 = new StreamReader(res1.GetResponseStream());
+                string alumnosJson1 = reader1.ReadToEnd();
+                JavaScriptSerializer js1 = new JavaScriptSerializer();
+                List<LibroPendiente> librosObtenidos = js1.Deserialize<List<LibroPendiente>>(alumnosJson1);
+
+                if (librosObtenidos.ToList().Count()>0)
+                {
+                    lblmensaje.Text = "Usted cuenta con libros pendientes por devolver. Por favor, acérquese a la biblioteca.";
+
+
+
+
+                }
+                else
+                {
+                    lblmensaje.Text = "El Alumno no tiene devoluciones pendientes.";
+                }
+
+
+            //Respuesta resp = ws.ListarLibrosPrestados(cod_alumno);
+            //lblmensaje.Text = resp.mensaje;
+            //bibli = resp.flag;
+            des_biblio();
             validar_fini();
         }
 
 
         protected void btnestadoD_Click(object sender, EventArgs e)
         {
-            if (ws.ListarPagos(cod_alumno).Count() > 0)
-            {
-                deud = 0;
-                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
-
-            }
-            else
-            {
-                deud = 1;
-                lblmensaje.Text = "El Alumno no presenta ninguna deuda pendiente.";
-            }
+            Respuesta resp = ws.ListarPagos(cod_alumno);
+            lblmensaje.Text = resp.mensaje;
+            deud = resp.flag;
+            des_deudas();
             validar_fini();
         }
         public void validar_fini()
         {
-            //if (notas==1 && bibli==1 && deud==1)
-            //{
-            //    btnfinish.Enabled = true;
-            //}
+            if (notas == 1 && bibli == 1 && deud == 1)
+            {
+                btnfinish.Visible = true;
+            }
+        }
+
+        public void des_continuar()
+        {
+            if (notas == 1)
+            {
+                btcontinuar.Visible = true;
+            }
+            else
+            {
+                btcontinuar.Visible = false;
+            }
+        }
+        public void des_biblio()
+        {
+            if (bibli == 1)
+            {
+                btcontinuar.Visible = true;
+            }
+            else
+            {
+                btcontinuar.Visible = false;
+            }
+        }
+        public void des_deudas()
+        {
+            if (deud == 1)
+            {
+                btcontinuar.Visible = true;
+            }
+            else
+            {
+                btcontinuar.Visible = false;
+            }
         }
 
 

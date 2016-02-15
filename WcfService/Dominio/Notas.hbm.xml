@@ -8,7 +8,7 @@
       <generator class="increment" />
     </id>
     <property name="qt_nota" column="qt_nota" />
-    <property name="desc_curso" column="desc_curso" />
-    <many-to-one name="cd_alumno" column="cd_alumno" />
+    <property name="ds_curso" column="ds_curso" />
+    <property name="cd_alumno" column="cd_alumno" />
   </class>
 </hibernate-mapping>
