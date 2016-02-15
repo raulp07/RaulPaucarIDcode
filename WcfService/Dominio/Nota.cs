@@ -15,11 +15,12 @@ namespace WcfService.Dominio
         [DataMember]
         public int cd_alumno { get; set; }
 
+        
         [DataMember]
         public string ds_curso { get; set; }
 
         [DataMember]
-        public double qt_nota { get; set; }
-
+        public int qt_nota { get; set; }
+        
     }
 }

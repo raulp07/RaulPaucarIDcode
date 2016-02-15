@@ -103,7 +103,7 @@
                         </table>
                     </div>
                 </asp:Panel>
-
+    
                 <asp:Panel runat="server" ID="Panel1" Visible="false">
                     <div id="bloqueoPagina2"></div>
                     <div id="Mensaje2" class="ibox-content">
@@ -116,249 +116,244 @@
         </asp:UpdatePanel>
 
         <div id="wrapper">
-            <nav class="navbar-default navbar-static-side" role="navigation">
-                <div class="sidebar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="nav-header">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
                             <div class="dropdown profile-element">
                                 <span>
-                                    <img alt="image" class="img-circle" src="img/profile_small.jpg" />
-                                </span>
-                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                     <span class="clear"><span class="block m-t-xs"><strong class="font-bold">Naruto Uzumaki</strong>
                                     </span><span class="text-muted text-xs block">Padre de familia <b class="caret"></b></span></span></a>
-                                <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                    <li><a href="profile.html">Mis datos</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="login.html">Salir</a></li>
-                                </ul>
-                            </div>
-                            <div class="logo-element">
-                                SCH+
-                            </div>
-                        </li>
-
-                        <li class="active">
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="profile.html">Mis datos</a></li>                                                        
+                            <li class="divider"></li>
+                            <li><a href="login.html">Salir</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        SCH+
+                    </div>
+                </li>
+                
+                <li class="active">
                             <a href="#"><i class="fa fa-desktop"></i><span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
-                            <ul class="nav nav-second-level">
-                                <li class="active"><a href="contacts.html">Matrícula 2016</a></li>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="contacts.html">Matrícula 2016</a></li>
                                 <li><a href="#">Notas Académicas</a></li>
                                 <li><a href="#">Horario Académico</a></li>
                                 <li><a href="#">Datos Personales</a></li>
                                 <li><a href="pagos.aspx">Libros pendientes</a></li>
-                            </ul>
-                        </li>
-
                     </ul>
+                </li>
+                
+            </ul>
 
-                </div>
-            </nav>
+        </div>
+    </nav>
 
-            <div id="page-wrapper" class="gray-bg">
-                <div class="row border-bottom">
-                    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                        <div class="navbar-header">
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
                             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
-
-                        </div>
-                        <ul class="nav navbar-top-links navbar-right">
-                            <li>
-                                <span class="m-r-sm text-muted welcome-message">Bienbenido a la I.E.P. School++</span>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+            
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Bienbenido a la I.E.P. School++</span>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
                                     <i class="fa fa-envelope"></i><span class="label label-warning">16</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a7.jpg">
                                 </a>
-                                <ul class="dropdown-menu dropdown-messages">
-                                    <li>
-                                        <div class="dropdown-messages-box">
-                                            <a href="profile.html" class="pull-left">
-                                                <img alt="image" class="img-circle" src="img/a7.jpg">
-                                            </a>
-                                            <div class="media-body">
-                                                <small class="pull-right">46h ago</small>
+                                <div class="media-body">
+                                    <small class="pull-right">46h ago</small>
                                                 <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>.
                                                 <br>
-                                                <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="dropdown-messages-box">
-                                            <a href="profile.html" class="pull-left">
-                                                <img alt="image" class="img-circle" src="img/a4.jpg">
-                                            </a>
-                                            <div class="media-body ">
-                                                <small class="pull-right text-navy">5h ago</small>
+                                    <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/a4.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right text-navy">5h ago</small>
                                                 <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>.
                                                 <br>
-                                                <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="dropdown-messages-box">
-                                            <a href="profile.html" class="pull-left">
-                                                <img alt="image" class="img-circle" src="img/profile.jpg">
-                                            </a>
-                                            <div class="media-body ">
-                                                <small class="pull-right">23h ago</small>
+                                    <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="dropdown-messages-box">
+                                <a href="profile.html" class="pull-left">
+                                    <img alt="image" class="img-circle" src="img/profile.jpg">
+                                </a>
+                                <div class="media-body ">
+                                    <small class="pull-right">23h ago</small>
                                                 <strong>Monica Smith</strong> love <strong>Kim Smith</strong>.
                                                 <br>
-                                                <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="text-center link-block">
-                                            <a href="mailbox.html">
+                                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="mailbox.html">
                                                 <i class="fa fa-envelope"></i><strong>Read All Messages</strong>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-bell"></i><span class="label label-primary">8</span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-alerts">
-                                    <li>
-                                        <a href="mailbox.html">
-                                            <div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-bell"></i><span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="mailbox.html">
+                                <div>
                                                 <i class="fa fa-envelope fa-fw"></i>You have 16 messages
                                     <span class="pull-right text-muted small">4 minutes ago</span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="profile.html">
-                                            <div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="profile.html">
+                                <div>
                                                 <i class="fa fa-twitter fa-fw"></i>3 New Followers
                                     <span class="pull-right text-muted small">12 minutes ago</span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="grid_options.html">
-                                            <div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="grid_options.html">
+                                <div>
                                                 <i class="fa fa-upload fa-fw"></i>Server Rebooted
                                     <span class="pull-right text-muted small">4 minutes ago</span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <div class="text-center link-block">
-                                            <a href="notifications.html">
-                                                <strong>See All Alerts</strong>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
-
-                            <li>
-                                <a href="login.html">
-                                    <i class="fa fa-sign-out"></i>Log out
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <div class="text-center link-block">
+                                <a href="notifications.html">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
                                 </a>
-                            </li>
-                        </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
 
-                    </nav>
+
+                <li>
+                    <a href="login.html">
+                                    <i class="fa fa-sign-out"></i>Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Reserva de matrícula 2016</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                                <a href="index.aspx">Home</a>
+                        </li>
+                        <li>
+                            <a>App Views</a>
+                        </li>
+                        <li class="active">
+                            <strong>Reserva</strong>
+                        </li>
+                    </ol>
                 </div>
-                <div class="row wrapper border-bottom white-bg page-heading">
-                    <div class="col-lg-10">
-                        <h2>Reserva de matrícula 2016</h2>
-                        <ol class="breadcrumb">
-                            <li>
-                                <a href="index.html">Home</a>
-                            </li>
-                            <li>
-                                <a>App Views</a>
-                            </li>
-                            <li class="active">
-                                <strong>Reserva</strong>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="col-lg-2">
-                    </div>
+                <div class="col-lg-2">
                 </div>
-                <div class="wrapper wrapper-content animated fadeInRight">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <div class="jumbotron">
-                                <h1>Reserva</h1>
-                                <p>Para finalizar la reserva de matricula, usted deberá de pasar las siguientes restricciones.</p>
+            </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="jumbotron">
+                        <h1>Reserva</h1>
+                        <p>Para finalizar la reserva de matricula, usted deberá de pasar las siguientes restricciones.</p>
                                 <p>
                                     <a href="#" class="btn btn-primary btn-lg" role="button">Ver video de ayuda</a>
-                                </p>
-                            </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Proceso de reserva matrícula 2016</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">Config option 1</a>
+                                </li>
+                                <li><a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
                         </div>
-                        <div class="col-lg-7">
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>Proceso de reserva matrícula 2016</h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li><a href="#">Config option 1</a>
-                                            </li>
-                                            <li><a href="#">Config option 2</a>
-                                            </li>
-                                        </ul>
-                                        <a class="close-link">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                    </div>
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
 
 
 
 
-                                        <div class="ibox-content">
-                                            <p>
-                                                Validar las siguientes restrciones
-                                            </p>
-                                            <div <%--id="wizard"--%>>
-                                                <%--<h1>Situacion Académica</h1>--%>
-                                                <asp:Button ID="btnsitacademica" runat="server" Text="Situacion Académica" class="btn btn-primary btn-sm" OnClick="btnsitacademica_Click" />
+                    <div class="ibox-content">
+                        <p>
+                            Validar las siguientes restrciones
+                        </p>
+                        <div id="wizard">
+                            <h1>Situacion Académica</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                <h2>Aprobado</h2>
+                                <p>
+                                    EL Alumno no debe nunguna materia académica.
+                                </p>
+                                </div>
+                            </div>
 
-
-                                                <%--<h1>Devolución de libros</h1>--%>
-                                                <asp:Button ID="btndevolucion" runat="server" Text="Devolución de libros" class="btn btn-primary btn-sm" OnClick="btndevolucion_Click" />
-
-
-                                                <%--<h1>Estado de deudas</h1>--%>
-                                                <asp:Button ID="btnestadoD" runat="server" Text="Estado de deudas" class="btn btn-primary btn-sm" OnClick="btnestadoD_Click" />
-                                                <div class="ibox-content">
-
-                                                
-                                                <table>
-                                                    <tr>
-                                                        <td>
-                                                            <asp:Label ID="lblmensaje" runat="server" Text="Label"></asp:Label>
-                                                            
-                                                        </td>
-                                                    </tr>
-                                                </table>
-
-                                                </div>
+                            <h1>Devolución de libros</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                    <h2>Completo</h2>
+                                    <p>
+                                        El alumno no presenta ningun prestamo de libro pendiente.
+                                    </p>
+                                </div>
                                             </div>
                                             <div>
                                                 <table>
@@ -378,50 +373,54 @@
                                                     </tr>
 
                                                 </table>
-                                            </div>
-                                        </div>
-                                    </ContentTemplate>
-                                </asp:UpdatePanel>
-
                             </div>
-                        </div>
-                    </div>
 
-                </div>
-                <div class="footer">
-                    <div class="pull-right">
-                        10GB of <strong>250GB</strong> Free.
+                                       
+                        </div>
+
                     </div>
-                    <div>
-                        <strong>Copyright</strong> Example Company &copy; 2014-2015
-                    </div>
+                                </div>
+                                
                 </div>
 
             </div>
+            </div>
+            
+            </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+
+        </div>
         </div>
 
 
 
-        <!-- Mainly scripts -->
-        <script src="js/jquery-2.1.1.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-        <!-- Custom and plugin javascript -->
-        <script src="js/inspinia.js"></script>
-        <script src="js/plugins/pace/pace.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
 
-        <!-- Steps -->
-        <script src="js/plugins/staps/jquery.steps.min.js"></script>
+    <!-- Steps -->
+    <script src="js/plugins/staps/jquery.steps.min.js"></script>
 
-        <!-- Jquery Validate -->
-        <script src="js/plugins/validate/jquery.validate.min.js"></script>
+    <!-- Jquery Validate -->
+    <script src="js/plugins/validate/jquery.validate.min.js"></script>
 
 
-        <script>
+    <script>
 
-            $(document).ready(function () {
+        $(document).ready(function () {
 
 
 
@@ -500,7 +499,7 @@
             //        }
             //    });
             //});
-        </script>
+    </script>
 
     </form>
 </body>

@@ -96,9 +96,9 @@ namespace WcfService
         {
             get
             {
-                if (reservaMatriculaDAO == null)
-                    reservaMatriculaDAO = new ReservaMatriculaDAO();
-                return reservaMatriculaDAO;
+                if (libroPendienteDAO == null)
+                    libroPendienteDAO = new LibroPendienteDAO();
+                return libroPendienteDAO;
             }
         }
 
@@ -242,7 +242,7 @@ namespace WcfService
             else
             {
                 resp = new Respuesta()
-                {
+        {
                     mensaje = "El Alumno no presenta ninguna deuda pendiente.",
                     flag = 0
                 };
