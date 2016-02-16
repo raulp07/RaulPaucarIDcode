@@ -7,9 +7,9 @@
     <id name="Codigo" column="cd_reserva">
       <generator class="increment" />
     </id>
-    <many-to-one name="Alumno" column="cd_alumno" />
+    <property name="cd_alumno" column="cd_alumno" />
     <property name="FechaReserva" column="dt_fecha_reserva" />
-    <property name="Estado" column="fg_estado" />
+    <property name="fg_estado" column="fg_estado" />
     <property name="Monto" column="qt_monto_pagar" />
   </class>
 </hibernate-mapping>

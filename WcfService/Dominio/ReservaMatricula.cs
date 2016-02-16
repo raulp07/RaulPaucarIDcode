@@ -9,11 +9,11 @@ namespace WcfService.Dominio
         [DataMember]
         public int Codigo { get; set; }
         [DataMember]
-        public Alumno Alumno { get; set; }
+        public string cd_alumno { get; set; }
         [DataMember]
         public DateTime FechaReserva { get; set; }
         [DataMember]
-        public char Estado { get; set; }
+        public char fg_estado { get; set; }
         [DataMember]
         public double Monto { get; set; }
     }

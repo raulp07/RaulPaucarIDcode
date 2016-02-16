@@ -4,21 +4,14 @@
   <xs:complexType name="Alumno">
     <xs:sequence>
       <xs:element minOccurs="0" name="cd_alumno" type="xs:int" />
-      <xs:element minOccurs="0" name="cd_grado" nillable="true" type="tns:ObligacionPago" />
-      <xs:element minOccurs="0" name="cd_padre" nillable="true" type="tns:Padre" />
+      <xs:element minOccurs="0" name="cd_padre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cd_pago" type="xs:int" />
       <xs:element minOccurs="0" name="ds_apellido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ds_identificador_alumno" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ds_nombre" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Alumno" nillable="true" type="tns:Alumno" />
-  <xs:complexType name="ObligacionPago">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cd_grado" type="xs:int" />
-      <xs:element minOccurs="0" name="ds_grado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="qt_monto" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ObligacionPago" nillable="true" type="tns:ObligacionPago" />
   <xs:complexType name="Padre">
     <xs:sequence>
       <xs:element minOccurs="0" name="cd_padre" type="xs:int" />
@@ -33,6 +26,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAlumno" nillable="true" type="tns:ArrayOfAlumno" />
+  <xs:complexType name="Respuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="flag" type="xs:int" />
+      <xs:element minOccurs="0" name="mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Respuesta" nillable="true" type="tns:Respuesta" />
+  <xs:complexType name="ReservaMatricula">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaReserva" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Monto" type="xs:double" />
+      <xs:element minOccurs="0" name="cd_alumno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fg_estado" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReservaMatricula" nillable="true" type="tns:ReservaMatricula" />
   <xs:complexType name="ArrayOfNota">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Nota" nillable="true" type="tns:Nota" />
@@ -41,62 +51,26 @@
   <xs:element name="ArrayOfNota" nillable="true" type="tns:ArrayOfNota" />
   <xs:complexType name="Nota">
     <xs:sequence>
-      <xs:element minOccurs="0" name="cd_alumno" nillable="true" type="tns:Alumno" />
+      <xs:element minOccurs="0" name="cd_alumno" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="cd_nota" type="xs:int" />
-      <xs:element minOccurs="0" name="desc_curso" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="qt_nota" type="xs:int" />
+      <xs:element minOccurs="0" name="ds_curso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qt_nota" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Nota" nillable="true" type="tns:Nota" />
-  <xs:complexType name="ArrayOfLibroPendiente">
+  <xs:complexType name="ArrayOfObservacion">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="LibroPendiente" nillable="true" type="tns:LibroPendiente" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Observacion" nillable="true" type="tns:Observacion" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfLibroPendiente" nillable="true" type="tns:ArrayOfLibroPendiente" />
-  <xs:complexType name="LibroPendiente">
+  <xs:element name="ArrayOfObservacion" nillable="true" type="tns:ArrayOfObservacion" />
+  <xs:complexType name="Observacion">
     <xs:sequence>
-      <xs:element minOccurs="0" name="cd_alumno" nillable="true" type="tns:Alumno" />
-      <xs:element minOccurs="0" name="cd_libro" nillable="true" type="tns:Libro" />
-      <xs:element minOccurs="0" name="cd_pendiente" type="xs:int" />
-      <xs:element minOccurs="0" name="dt_fecha_devolucion" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="dt_fecha_prestamo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="cd_alumno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cd_observacion" type="xs:int" />
+      <xs:element minOccurs="0" name="ds_comentario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ds_profesor" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="LibroPendiente" nillable="true" type="tns:LibroPendiente" />
-  <xs:complexType name="Libro">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cd_libro" type="xs:int" />
-      <xs:element minOccurs="0" name="ds_autor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ds_titulo" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Libro" nillable="true" type="tns:Libro" />
-  <xs:complexType name="ArrayOfPago">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pago" nillable="true" type="tns:Pago" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPago" nillable="true" type="tns:ArrayOfPago" />
-  <xs:complexType name="Pago">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cd_alumno" nillable="true" type="tns:Alumno" />
-      <xs:element minOccurs="0" name="cd_pago" type="xs:int" />
-      <xs:element minOccurs="0" name="ds_estado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ds_pago" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="dt_fecha" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="qt_monto" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Pago" nillable="true" type="tns:Pago" />
-  <xs:complexType name="ReservaMatricula">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Alumno" nillable="true" type="tns:Alumno" />
-      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="Estado" type="ser:char" />
-      <xs:element minOccurs="0" name="FechaReserva" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Monto" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ReservaMatricula" nillable="true" type="tns:ReservaMatricula" />
+  <xs:element name="Observacion" nillable="true" type="tns:Observacion" />
 </xs:schema>

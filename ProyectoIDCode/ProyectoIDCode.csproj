@@ -634,6 +634,7 @@
     <Content Include="js\plugins\video\responsible-video.js" />
     <Content Include="notas.aspx" />
     <Content Include="observaciones.aspx" />
+    <Content Include="librospendientes.aspx" />
     <Content Include="pagos.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <Content Include="restriccion1.aspx" />
@@ -648,13 +649,13 @@
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Nota.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.LibroPendiente.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Pago.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.ReservaMatricula.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Observacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Respuesta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSMatricula\ReservaService.disco" />
@@ -674,6 +675,7 @@
     <Compile Include="cancelarMatricula.aspx.designer.cs">
       <DependentUpon>cancelarMatricula.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CLASES\LibroPendiente.cs" />
     <Compile Include="datos.aspx.cs">
       <DependentUpon>datos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -709,6 +711,13 @@
     </Compile>
     <Compile Include="observaciones.aspx.designer.cs">
       <DependentUpon>observaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="librospendientes.aspx.cs">
+      <DependentUpon>librospendientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librospendientes.aspx.designer.cs">
+      <DependentUpon>librospendientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="pagos.aspx.cs">
       <DependentUpon>pagos.aspx</DependentUpon>

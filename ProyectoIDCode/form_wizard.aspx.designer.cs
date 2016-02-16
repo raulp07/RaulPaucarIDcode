@@ -49,6 +49,15 @@ namespace ProyectoIDCode {
         protected global::System.Web.UI.WebControls.Panel pnl_mensajeFinal;
         
         /// <summary>
+        /// lbltitulo1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbltitulo1;
+        
+        /// <summary>
         /// lblmsj1 control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace ProyectoIDCode {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblmsj1;
+        
+        /// <summary>
+        /// lbltitulo2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbltitulo2;
         
         /// <summary>
         /// lblmsj2 control.
@@ -67,24 +85,6 @@ namespace ProyectoIDCode {
         protected global::System.Web.UI.WebControls.Label lblmsj2;
         
         /// <summary>
-        /// lblmsj3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblmsj3;
-        
-        /// <summary>
-        /// lblmsj4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblmsj4;
-        
-        /// <summary>
         /// btn_aceptar control.
         /// </summary>
         /// <remarks>
@@ -92,6 +92,15 @@ namespace ProyectoIDCode {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_aceptar;
+        
+        /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
         /// UpdatePanel1 control.

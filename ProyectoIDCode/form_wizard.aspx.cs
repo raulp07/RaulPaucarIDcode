@@ -5,14 +5,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ProyectoIDCode.WSMatricula;
+using System.Collections.Generic;
+using System.Net;
+using System.IO;
+using ProyectoIDCode.CLASES;
+using System.Web.Script.Serialization;
+
 namespace ProyectoIDCode
 {
     public partial class form_wizard : System.Web.UI.Page
     {
         
        
-        static int cod_alumno;
+        static string cod_alumno;
         static int notas=0, bibli=0, deud=0;
+        static string flag;
 
         WSMatricula.ReservaServiceClient ws = new WSMatricula.ReservaServiceClient();
 
@@ -21,8 +28,11 @@ namespace ProyectoIDCode
         {
             if (!Page.IsPostBack)
             {
-                cod_alumno =  Int32.Parse(Request.QueryString["cod_alumno"].ToString());
+                cod_alumno = Session["cod_alumno"].ToString();  //Request.QueryString["cod_alumno"].ToString();
+
+                
                 cargarmensaje(sender,e);
+                btnfinish.Visible = false;
             }
         }
 
@@ -39,26 +49,27 @@ namespace ProyectoIDCode
 
         protected void btnfinish_Click(object sender, EventArgs e)
         {
-
+            
             pnl_mensajeFinal.Visible = true;
             ReservaMatricula res = ws.registarReserva(cod_alumno);
 
-            //lblmensaje.Text = "Codigo unico de matricula:" + res.Codigo + "\n" +
-            //   "Nombre de Alumno:" + res.Alumno.ds_apellido + " " + res.Alumno.ds_nombre + "\n" +
-            //    "Pago a realizar:" + res.Monto + " Soles" + "\n" +
-            //   "Fecha de reserva: " + res.FechaReserva + "\n";
-            lblmsj1.Text = res.Codigo.ToString();
-            lblmsj2.Text = res.Alumno.ds_nombre.ToString();
-            lblmsj3.Text = res.Monto.ToString();
-            lblmsj4.Text = res.FechaReserva.ToString();
-            //Codigo unico de matricula: XXX
-            //Nombre de Alumno: XXX
-            //Pago a realizar:
-            //Fecha de reserva: 
-
-            
-
+            if (res.fg_estado.Equals('0'))
+            {
+                lbltitulo1.Text = "";
+                lbltitulo2.Text = "";
+                lblmsj1.Text = res.cd_alumno.ToString();
+                lblmsj2.Text = res.FechaReserva.ToString();
+            }
+            else
+            {
+                lbltitulo1.Text = "Pago a realizar :";
+                lbltitulo2.Text = "Fecha de reserva :";
+                lblmsj1.Text = res.Monto.ToString();
+                lblmsj2.Text = res.FechaReserva.ToString();
+            }
+            flag = res.fg_estado.ToString();
         }
+
 
         protected void btcontinuar_Click(object sender, EventArgs e)
         {
@@ -75,71 +86,100 @@ namespace ProyectoIDCode
             
 
         }
-
+        
         protected void btnsitacademica_Click(object sender, EventArgs e)
         {
-            if (ws.ListarNotaAlumno(cod_alumno).Count() > 0)
-            {
-                notas = 0;
-                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
-            }
-            else
-            {
-                notas = 1;
-                lblmensaje.Text = "El Alumno no debe ninguna materia académica.";
-            }
+            
+            Respuesta resp = ws.ListarNotaAlumno(cod_alumno);
+            lblmensaje.Text = resp.mensaje;
+            notas = resp.flag;
+            des_continuar();
             validar_fini();
         }
 
         protected void btndevolucion_Click(object sender, EventArgs e)
         {
-            if (ws.ListarLibrosPrestados(cod_alumno).Count() > 0)
-            {
-                bibli = 0;
-                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
-            }
-            else
-            {
-                bibli = 1;
-                lblmensaje.Text = "El Alumno no tiene devoluciones pendientes.";
-            }
+
+            Respuesta resp = ws.ListarLibrosPrestados(cod_alumno);
+            lblmensaje.Text = resp.mensaje;
+            bibli = resp.flag;
+            des_biblio();
             validar_fini();
         }
 
 
         protected void btnestadoD_Click(object sender, EventArgs e)
         {
-            if (ws.ListarPagos(cod_alumno).Count() > 0)
-            {
-                deud = 0;
-                lblmensaje.Text = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.";
-
-            }
-            else
-            {
-                deud = 1;
-                lblmensaje.Text = "El Alumno no presenta ninguna deuda pendiente.";
-            }
+            Respuesta resp = ws.ListarPagos(cod_alumno);
+            lblmensaje.Text = resp.mensaje;
+            deud = resp.flag;
+            des_deudas();
             validar_fini();
         }
         public void validar_fini()
         {
-            //if (notas==1 && bibli==1 && deud==1)
-            //{
-            //    btnfinish.Enabled = true;
-            //}
+            if (notas == 1 && bibli == 1 && deud == 1)
+            {
+                btnfinish.Visible = true;
+            }
+            else
+            {
+                btnfinish.Visible = false;
+            }
+        }
+
+        public void des_continuar()
+        {
+            if (notas == 1)
+            {
+                btcontinuar.Visible = true;
+            }
+            else
+            {
+                btcontinuar.Visible = false;
+            }
+        }
+        public void des_biblio()
+        {
+            if (bibli == 1)
+            {
+                btcontinuar.Visible = true;
+            }
+            else
+            {
+                btcontinuar.Visible = false;
+            }
+        }
+        public void des_deudas()
+        {
+            if (deud == 1)
+            {
+                btcontinuar.Visible = true;
+            }
+            else
+            {
+                btcontinuar.Visible = false;
+            }
         }
 
 
         protected void btncancel_Click(object sender, EventArgs e)
-        {
-            pnl_mensajeFinal.Visible = true;
-            //Response.Redirect("index.aspx");
+        {            
+            Response.Redirect("index.aspx");
+            //pnl_mensajeFinal.Visible = true;
         }
 
         protected void btn_aceptar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("index.aspx");
+            if (flag.Equals("0"))
+            {
+                pnl_mensajeFinal.Visible = false;
+            }
+            else
+            {
+                Response.Redirect("index.aspx");
+            }
+            
         }
 
 

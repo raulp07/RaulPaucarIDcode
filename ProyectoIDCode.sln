@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoIDCode", "ProyectoIDCode\ProyectoIDCode.csproj", "{A03484DC-6297-47E3-AD08-82960B3621F0}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "archivosDLL", "archivosDLL"
 	ProjectSection(SolutionItems) = preProject
 		amqmdnet.dll = amqmdnet.dll
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestTests", "RestTests\RestTests.csproj", "{65B14C7B-09A7-4F02-AAF8-544EE1560190}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{D4BFA679-11FB-42A4-89C1-5522506317D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4BFA679-11FB-42A4-89C1-5522506317D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4BFA679-11FB-42A4-89C1-5522506317D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B14C7B-09A7-4F02-AAF8-544EE1560190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B14C7B-09A7-4F02-AAF8-544EE1560190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B14C7B-09A7-4F02-AAF8-544EE1560190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B14C7B-09A7-4F02-AAF8-544EE1560190}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

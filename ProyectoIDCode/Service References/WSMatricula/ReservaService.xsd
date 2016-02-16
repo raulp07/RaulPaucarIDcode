@@ -49,7 +49,7 @@
   <xs:element name="ListarAlumno">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="id_padre" type="xs:int" />
+        <xs:element minOccurs="0" name="id_padre" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -63,56 +63,84 @@
   <xs:element name="ListarNotaAlumno">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="cd_alumno" type="xs:int" />
+        <xs:element minOccurs="0" name="cd_alumno" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListarNotaAlumnoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="ListarNotaAlumnoResult" nillable="true" type="q5:ArrayOfNota" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListarLibrosPrestados">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="codigo" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListarLibrosPrestadosResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="ListarLibrosPrestadosResult" nillable="true" type="q6:ArrayOfLibroPendiente" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListarPagos">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="cd_alumno" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListarPagosResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="ListarPagosResult" nillable="true" type="q7:ArrayOfPago" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="ListarNotaAlumnoResult" nillable="true" type="q5:Respuesta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="registarReserva">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="cd_alumno" type="xs:int" />
+        <xs:element minOccurs="0" name="cd_alumno" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="registarReservaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="registarReservaResult" nillable="true" type="q8:ReservaMatricula" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="registarReservaResult" nillable="true" type="q6:ReservaMatricula" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarSituacionAcademica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cd_alumno" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarSituacionAcademicaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="VerificarSituacionAcademicaResult" nillable="true" type="q7:ArrayOfNota" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarLibrosPrestados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarLibrosPrestadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="ListarLibrosPrestadosResult" nillable="true" type="q8:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPagos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cd_alumno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarPagosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="ListarPagosResult" nillable="true" type="q9:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarObservacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cd_alumno" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarObservacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService.Dominio" minOccurs="0" name="ListarObservacionResult" nillable="true" type="q10:ArrayOfObservacion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

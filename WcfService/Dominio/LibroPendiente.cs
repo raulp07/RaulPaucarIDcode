@@ -12,12 +12,17 @@ namespace WcfService.Dominio
         [DataMember]
         public int cd_pendiente { get; set; }
         [DataMember]
-        public Alumno cd_alumno { get; set; }
+        public string cd_alumno { get; set; }
         [DataMember]
-        public Libro cd_libro { get; set; }
+        public int cd_libro { get; set; }
         [DataMember]
         public DateTime dt_fecha_prestamo { get; set; }
         [DataMember]
-        public DateTime dt_fecha_devolucion { get; set; }
+        public DateTime dt_fecha_devolucion { get; set;} 
+        [DataMember]
+        public string ds_libro { get; set; }
+        [DataMember]
+        public string ds_autor { get; set; }
+
     }
 }

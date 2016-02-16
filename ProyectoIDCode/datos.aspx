@@ -42,11 +42,12 @@
                         <li class="active">
                             <a href="#"><i class="fa fa-desktop"></i><span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
                             <ul class="nav nav-second-level">
-                                <li><a href="contacts.html">Matrícula 2016</a></li>
+                                <li><a href="form_wizard.aspx">Matrícula 2016</a></li>
                                 <li><a href="profile.html">Notas Académicas</a></li>
                                 <li class="active"><a href="projects.html">Actualizar Datos</a></li>
                                 <li><a href="project_detail.html">Datos Personales</a></li>
-                                <li><a href="file_manager.html">Pagos y deudas</a></li>
+                                <li><a href="librospendientes.aspx">Libros pendientes</a></li>
+                                <li><a href="pagos.aspx">Pagos y deudas</a></li>
                             </ul>
                         </li>
 
@@ -183,7 +184,7 @@
                         <h2>Actualizar Datos</h2>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="index.aspx">Home</a>
                             </li>
                             <li>
                                 <a>App Views</a>

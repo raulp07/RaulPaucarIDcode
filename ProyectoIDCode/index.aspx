@@ -183,7 +183,7 @@
                         <h2>Matrícula 2016</h2>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="index.aspx">Home</a>
                             </li>
                             <li>App Views
                             </li>
@@ -294,7 +294,7 @@
                                 <table align="left" class="contact-box" class="col-sm-4">
                                     <tr>
                                         <td class="col-sm-4">
-                                            <asp:Image ID="Image2" runat="server" Width="140" Height="140" ImageUrl="img/a4.jpg" />
+                                            <asp:Image ID="Image2" runat="server" Width="140" Height="140" ImageUrl='<%#traercodimg(Eval("cd_alumno").ToString()) %>' />
 
                                         </td>
                                         <td class="col-sm-8">
@@ -320,12 +320,12 @@
                                                         Grado escolar: 
                                                     </td>
                                                     <td>
-                                                        <asp:Label ID="lblgrado" runat="server" Text='<%# Eval("cd_grado") %>'></asp:Label>
+                                                        <asp:Label ID="lblpago" runat="server" Text='<%# Eval("cd_pago") %>'></asp:Label>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <asp:LinkButton ID="lbver" runat="server" CommandName="lbnver" CommandArgument='<%# Eval("cd_alumno") %>'>Ver</asp:LinkButton>
+                                                        <asp:LinkButton ID="lbver" runat="server" CommandName="lbnver" CommandArgument='<%# Eval("cd_alumno") %>' >Ver</asp:LinkButton>
                                                     </td>
                                                 </tr>
                                             </table>

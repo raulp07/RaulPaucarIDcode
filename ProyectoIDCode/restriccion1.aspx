@@ -42,7 +42,7 @@
                         <li class="active">
                             <a href="#"><i class="fa fa-desktop"></i><span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
                             <ul class="nav nav-second-level">
-                                <li class="active"><a href="contacts.html">Matrícula 2016</a></li>
+                                <li class="active"><a href="form_wizard.aspx">Matrícula 2016</a></li>
                                 <li><a href="profile.html">Notas Académicas</a></li>
                                 <li><a href="projects.html">Horario Académico</a></li>
                                 <li><a href="project_detail.html">Datos Personales</a></li>
@@ -183,7 +183,7 @@
                         <h2>Reserva de matrícula 2016</h2>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="index.aspx">Home</a>
                             </li>
                             <li>
                                 <a>App Views</a>

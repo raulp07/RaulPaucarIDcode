@@ -22,6 +22,21 @@
             padding: 0px; /* display: none;*/
         }
 
+        #bloqueoPagina2 {
+            background: #000000;
+            width: 100%;
+            height: 1100px;
+            opacity: 0.7;
+            margin: 0px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            right: 0px;
+            z-index: 1000;
+            margin: 0px;
+            padding: 0px; /* display: none;*/
+        }
+
         #Mensaje {
             z-index: 10001;
             position: absolute;
@@ -55,40 +70,50 @@
             <ContentTemplate>
                 <asp:Panel runat="server" ID="pnl_mensajeFinal" Visible="false">
                     <div id="bloqueoPagina"></div>
+
                     <div id="Mensaje" class="ibox-content">
-                        <table>
-                            <tr>
-                                <td>Codigo unico de matricula :</td>
-                                <td>
-                                    <asp:Label ID="lblmsj1" runat="server" Text="Label"></asp:Label>
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <i class="fa fa-clock-o modal-icon"></i>
+                            <h4 class="modal-title">Reserva 2016</h4                            
+                        </div>
+                        <div class="modal-body">
+                            <table>
+                                <%--<tr>
+                                    <td>Codigo unico de matricula :</td>
+                                    <td>
+                                        <asp:Label ID="lblmsj1" runat="server" Text="Label"></asp:Label>
                                     </td>
-                            </tr>
-                            <tr>
-                                <td>Nombre de Alumno :</td>
-                                <td>
-                                    <asp:Label ID="lblmsj2" runat="server" Text="Label"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Pago a realizar :</td>
-                                <td>
-                                    <asp:Label ID="lblmsj3" runat="server" Text="Label"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Fecha de reserva : </td>
-                                <td>
-                                    <asp:Label ID="lblmsj4" runat="server" Text="Label"></asp:Label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Button runat="server" ID="btn_aceptar" Text="Aceptar" OnClick="btn_aceptar_Click" class="btn btn-primary btn-sm"></asp:Button>
-                                </td>
-                            </tr>
-                        </table>
+                                </tr>--%>
+                                <tr>
+                                    <td><asp:Label ID="lbltitulo1" runat="server" Text="Pago a realizar :" ></asp:Label> </td>
+                                    <td>
+                                        <asp:Label ID="lblmsj1" runat="server" Text="Label"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><asp:Label ID="lbltitulo2" runat="server" Text="Fecha de reserva :" ></asp:Label> </td>
+                                    <td>
+                                        <asp:Label ID="lblmsj2" runat="server" Text="Label"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:Button runat="server" ID="btn_aceptar" Text="Aceptar" OnClick="btn_aceptar_Click" class="btn btn-primary btn-sm"></asp:Button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                </asp:Panel>
+
+                <asp:Panel runat="server" ID="Panel1" Visible="false">
+                    <div id="bloqueoPagina2"></div>
+                    <div id="Mensaje2" class="ibox-content">
                     </div>
                 </asp:Panel>
+
             </ContentTemplate>
         </asp:UpdatePanel>
 
@@ -118,11 +143,12 @@
                         <li class="active">
                             <a href="#"><i class="fa fa-desktop"></i><span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
                             <ul class="nav nav-second-level">
-                                <li class="active"><a href="contacts.html">Matrícula 2016</a></li>
+                                <li class="active"><a href="form_wizard.aspx">Matrícula 2016</a></li>
                                 <li><a href="#">Notas Académicas</a></li>
                                 <li><a href="#">Horario Académico</a></li>
                                 <li><a href="#">Datos Personales</a></li>
-                                <li><a href="#">Pagos y deudas</a></li>
+                                <li><a href="librospendientes.aspx">Libros pendientes</a></li>
+                                <li><a href="pagos.aspx">Pagos y deudas</a></li>
                             </ul>
                         </li>
 
@@ -256,7 +282,7 @@
                         <h2>Reserva de matrícula 2016</h2>
                         <ol class="breadcrumb">
                             <li>
-                                <a href="index.html">Home</a>
+                                <a href="index.aspx">Home</a>
                             </li>
                             <li>
                                 <a>App Views</a>
@@ -325,14 +351,15 @@
                                                 <asp:Button ID="btnestadoD" runat="server" Text="Estado de deudas" class="btn btn-primary btn-sm" OnClick="btnestadoD_Click" />
                                                 <div class="ibox-content">
 
-                                                
-                                                <table>
-                                                    <tr>
-                                                        <td>
-                                                            <asp:Label ID="lblmensaje" runat="server" Text="Label"></asp:Label>
-                                                        </td>
-                                                    </tr>
-                                                </table>
+
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Label ID="lblmensaje" runat="server" Text="Label"></asp:Label>
+
+                                                            </td>
+                                                        </tr>
+                                                    </table>
 
                                                 </div>
                                             </div>
