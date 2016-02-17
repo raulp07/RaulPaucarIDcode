@@ -22,29 +22,22 @@ namespace ProyectoIDCode
             {
                 cargaralumnos();
             }
-            
+
         }
 
         private void cargaralumnos()
         {
-            //SqlConnection cn = new SqlConnection("Data Source=DESKTOP-74PRT41\\SQLEXPRESS;Initial Catalog=BD_IDCode;Integrated Security=true;");
-            //DataTable tb = new DataTable();
-            //SqlCommand cmd = new SqlCommand("listar_alumnos", cn);
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //da.Fill(tb);
 
-            
             tb.Columns.Add("cd_alumno");
             tb.Columns.Add("ds_nombre");
             tb.Columns.Add("ds_apellido");
             tb.Columns.Add("cd_pago");
-            
-            Array alumno =  alu.ListarAlumno("1");
-            
+
+            Array alumno = alu.ListarAlumno("1");
+
             foreach (var item in alumno)
             {
-                Alumno x = (Alumno) item;
+                Alumno x = (Alumno)item;
                 DataRow r = tb.NewRow();
                 r["cd_alumno"] = x.cd_alumno;
                 r["ds_nombre"] = x.ds_nombre;
@@ -60,7 +53,7 @@ namespace ProyectoIDCode
 
         public string traercodimg(string cod)
         {
-            string cadena = "img/a" + cod +".jpg";
+            string cadena = "img/a" + cod + ".jpg";
             return cadena;
         }
 
@@ -72,14 +65,14 @@ namespace ProyectoIDCode
         protected void lvalumnos_PagePropertiesChanged(object sender, EventArgs e)
         {
             //lvalumnos.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
-            
+
             //cargaralumnos();
         }
 
         protected void lvalumnos_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             string codigo = e.CommandArgument.ToString();
-            
+
             Session["cod_alumno"] = codigo.ToString();
             Response.Redirect("form_wizard.aspx");
         }

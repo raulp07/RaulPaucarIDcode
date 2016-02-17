@@ -25,7 +25,7 @@ namespace WcfService
         Padre ConsultarPadre(int cd_padre);
 
         [OperationContract]
-        Alumno registarAlumno(int cd_padre,string ds_nombre,int cd_grado,string ds_apellido);
+        Alumno registarAlumno(int cd_padre, string ds_nombre, int cd_grado, string ds_apellido);
 
         [OperationContract]
         List<Alumno> ListarAlumno(string id_padre);
@@ -33,7 +33,7 @@ namespace WcfService
         [OperationContract]
         Respuesta ListarNotaAlumno(string cd_alumno);
 
-        
+
         [OperationContract]
         ReservaMatricula registarReserva(string cd_alumno);
 
@@ -41,11 +41,11 @@ namespace WcfService
         [OperationContract]
         List<Nota> VerificarSituacionAcademica(int cd_alumno);
 
-        
+
         [OperationContract]
         Respuesta ListarLibrosPrestados(string codigo);
-        
-         
+
+
         [OperationContract]
         Respuesta ListarPagos(string cd_alumno);
 

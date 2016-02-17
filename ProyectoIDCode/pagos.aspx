@@ -223,7 +223,7 @@
                 <div class="col-lg-8">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Pagos y Deudas</h5>
+                            <h5>Libros pendientes</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -244,6 +244,12 @@
                         </div>
                         <div class="ibox-content">
 
+                            <asp:GridView ID="datos" runat="server" class="table table-hover">
+
+                            </asp:GridView>
+                            <asp:Label ID="lblmensaje" runat="server" Text=""></asp:Label>
+
+                            <!-- 
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
@@ -274,6 +280,7 @@
                                 </tr>
                                 </tbody>
                             </table>
+                            -->
                         </div>
                     </div>
                 </div>

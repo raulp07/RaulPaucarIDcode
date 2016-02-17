@@ -15,10 +15,10 @@ namespace ProyectoIDCode
 {
     public partial class form_wizard : System.Web.UI.Page
     {
-        
-       
+
+
         static string cod_alumno;
-        static int notas=0, bibli=0, deud=0;
+        static int notas = 0, bibli = 0, deud = 0;
         static string flag;
 
         WSMatricula.ReservaServiceClient ws = new WSMatricula.ReservaServiceClient();
@@ -28,10 +28,11 @@ namespace ProyectoIDCode
         {
             if (!Page.IsPostBack)
             {
+                notas = 0; bibli = 0; deud = 0;
                 cod_alumno = Session["cod_alumno"].ToString();  //Request.QueryString["cod_alumno"].ToString();
 
-                
-                cargarmensaje(sender,e);
+
+                cargarmensaje(sender, e);
                 btnfinish.Visible = false;
             }
         }
@@ -49,7 +50,7 @@ namespace ProyectoIDCode
 
         protected void btnfinish_Click(object sender, EventArgs e)
         {
-            
+
             pnl_mensajeFinal.Visible = true;
             ReservaMatricula res = ws.registarReserva(cod_alumno);
 
@@ -78,23 +79,25 @@ namespace ProyectoIDCode
             {
                 btndevolucion.Enabled = true;
                 btndevolucion_Click(sender, e);
-            }else if (btnestadoD.Enabled.ToString().Equals("False"))
+            }
+            else if (btnestadoD.Enabled.ToString().Equals("False"))
             {
                 btnestadoD.Enabled = true;
                 btnestadoD_Click(sender, e);
             }
             
+            
 
         }
-        
+
         protected void btnsitacademica_Click(object sender, EventArgs e)
         {
-            
+
             Respuesta resp = ws.ListarNotaAlumno(cod_alumno);
             lblmensaje.Text = resp.mensaje;
             notas = resp.flag;
-            des_continuar();
-            validar_fini();
+            
+            
         }
 
         protected void btndevolucion_Click(object sender, EventArgs e)
@@ -104,7 +107,7 @@ namespace ProyectoIDCode
             lblmensaje.Text = resp.mensaje;
             bibli = resp.flag;
             des_biblio();
-            validar_fini();
+            
         }
 
 
@@ -133,6 +136,7 @@ namespace ProyectoIDCode
             if (notas == 1)
             {
                 btcontinuar.Visible = true;
+                btncontinuar();
             }
             else
             {
@@ -144,6 +148,7 @@ namespace ProyectoIDCode
             if (bibli == 1)
             {
                 btcontinuar.Visible = true;
+                btncontinuar();
             }
             else
             {
@@ -154,19 +159,25 @@ namespace ProyectoIDCode
         {
             if (deud == 1)
             {
-                btcontinuar.Visible = true;
+                btcontinuar.Visible = false;
+                btncontinuar();
             }
             else
             {
                 btcontinuar.Visible = false;
             }
         }
-
+        public void btncontinuar()
+        {
+            if (btndevolucion.Enabled.ToString().Equals("True") && btnestadoD.Enabled.ToString().Equals("True"))
+            {
+                btcontinuar.Visible = false;
+            }
+        }
 
         protected void btncancel_Click(object sender, EventArgs e)
-        {            
+        {
             Response.Redirect("index.aspx");
-            //pnl_mensajeFinal.Visible = true;
         }
 
         protected void btn_aceptar_Click(object sender, EventArgs e)
@@ -179,12 +190,7 @@ namespace ProyectoIDCode
             {
                 Response.Redirect("index.aspx");
             }
-            
+
         }
-
-
-
-
-
     }
 }

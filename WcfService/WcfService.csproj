@@ -66,14 +66,14 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Dominio\Padre.hbm.xml" />
-    <EmbeddedResource Include="Dominio\Alumno.hbm.xml" />
     <EmbeddedResource Include="Dominio\ObligacionPago.hbm.xml" />
-    <EmbeddedResource Include="Dominio\Libro.hbm.xml" />
     <EmbeddedResource Include="Dominio\LibroPendiente.hbm.xml" />
-    <EmbeddedResource Include="Dominio\Notas.hbm.xml" />
-    <EmbeddedResource Include="Dominio\Pago.hbm.xml" />
     <EmbeddedResource Include="Dominio\ReservaMatricula.hbm.xml" />
     <EmbeddedResource Include="Dominio\Observacion.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Alumno.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Libro.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Notas.hbm.xml" />
+    <EmbeddedResource Include="Dominio\Pago.hbm.xml" />
     <Content Include="LibrosService.svc" />
     <Content Include="ReservaService.svc" />
     <Content Include="Web.config" />

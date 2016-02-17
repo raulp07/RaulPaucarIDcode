@@ -52,9 +52,9 @@ namespace WcfService
         {
             get
             {
-                if (pagoDAO == null)                
+                if (pagoDAO == null)
                     pagoDAO = new PagoDAO();
-                    return pagoDAO;                
+                return pagoDAO;
             }
         }
 
@@ -139,13 +139,13 @@ namespace WcfService
         public Respuesta ListarNotaAlumno(string cd_alumno)
         {
 
-            Respuesta resp; 
-            if (NotaDAO.ListarNotasDesaprobadas(cd_alumno).ToList().Count()>0)
+            Respuesta resp;
+            if (NotaDAO.ListarNotasDesaprobadas(cd_alumno).ToList().Count() > 0)
             {
-                resp = new Respuesta() 
+                resp = new Respuesta()
                 {
                     mensaje = "Usted no cumple con el requisito de Notas aprobadas. Por favor, acérquese al área de secretaria.",
-                    flag = 0    
+                    flag = 0
                 };
 
                 return resp;
@@ -160,12 +160,12 @@ namespace WcfService
                 };
 
                 return resp;
-            }            
+            }
         }
 
         // Johnny Rivera Barzola
 
-     
+
         public ReservaMatricula registarReserva(string cd_alumno)
         {
             //Alumno alumno = AlumnoDAO.Obtener(cd_alumno);
@@ -186,15 +186,15 @@ namespace WcfService
                 ReservaMatricula reserva = new ReservaMatricula()
                 {
                     cd_alumno = "El Alumno ya tiene una reserva pendiente.",
-                    FechaReserva = DateTime.Now ,
+                    FechaReserva = DateTime.Now,
                     fg_estado = '0',
-                    Monto =  0.0 //  double.Parse("1000")//alumno.cd_grado.qt_monto.ToString())
+                    Monto = 0.0 //  double.Parse("1000")//alumno.cd_grado.qt_monto.ToString())
 
                 };
                 return reserva;
             }
 
-            
+
         }
 
         // Johnny Rivera Barzola
@@ -203,16 +203,16 @@ namespace WcfService
         {
 
             return NotaDAO.ListarNotasAlumno(cd_alumno).ToList();
-            
+
         }
 
 
 
-        
+
         public Respuesta ListarLibrosPrestados(string codigo)
         {
             Respuesta resp;
-            if (LibroPendienteDAO.ListarLibrosPrestados(codigo).ToList().Count()>0)
+            if (LibroPendienteDAO.ListarLibrosPrestados(codigo).ToList().Count() > 0)
             {
                 resp = new Respuesta()
                 {
@@ -221,7 +221,7 @@ namespace WcfService
                 };
 
                 return resp;
-                
+
             }
             else
             {
@@ -232,12 +232,12 @@ namespace WcfService
                 };
                 return resp;
             }
-            
+
 
         }
-        
-          
-         
+
+
+
         // Johnny Rivera Barzola
 
         public List<Observacion> ListarObservacion(int cd_alumno)
@@ -249,7 +249,7 @@ namespace WcfService
         public Respuesta ListarPagos(string cd_alumno)
         {
             Respuesta resp;
-            if (PagoDAO.ListarPagos(cd_alumno).ToList().Count()>0)
+            if (PagoDAO.ListarPagos(cd_alumno).ToList().Count() > 0)
             {
                 resp = new Respuesta()
                 {
@@ -269,7 +269,7 @@ namespace WcfService
 
                 return resp;
             }
-            
+
 
         }
 

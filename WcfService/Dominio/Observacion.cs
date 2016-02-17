@@ -15,7 +15,7 @@ namespace WcfService.Dominio
         [DataMember]
         public string cd_alumno { get; set; }
         [DataMember]
-        public string  ds_profesor { get; set; }
+        public string ds_profesor { get; set; }
         [DataMember]
         public string ds_comentario { get; set; }
     }
