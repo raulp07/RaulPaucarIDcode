@@ -640,19 +640,59 @@
     <Content Include="restriccion1.aspx" />
     <Content Include="restriccion2.aspx" />
     <Content Include="restriccion3.aspx" />
+    <None Include="Service References\WSAlumnos\AlumnosService.disco" />
+    <None Include="Service References\WSAlumnos\configuration91.svcinfo" />
+    <None Include="Service References\WSAlumnos\configuration.svcinfo" />
+    <Content Include="Service References\WSAlumnos\ProyectoIDCode.WSAlumnos.Alumno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSAlumnos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSLibrosPrestados\LibrosPerstadosService.disco" />
+    <None Include="Service References\WSLibrosPrestados\configuration91.svcinfo" />
+    <None Include="Service References\WSLibrosPrestados\configuration.svcinfo" />
+    <Content Include="Service References\WSLibrosPrestados\ProyectoIDCode.WSLibrosPrestados.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSLibrosPrestados\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Alumno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSAlumnos\AlumnosService.wsdl" />
+    <None Include="Service References\WSAlumnos\AlumnosService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSAlumnos\AlumnosService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSAlumnos\AlumnosService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSLibrosPrestados\LibrosPerstadosService.wsdl" />
+    <None Include="Service References\WSLibrosPrestados\LibrosPerstadosService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSLibrosPrestados\LibrosPerstadosService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSLibrosPrestados\LibrosPerstadosService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Nota.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Observacion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Padre.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Nota.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.ReservaMatricula.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Observacion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSMatricula\ProyectoIDCode.WSMatricula.Respuesta.datasource">
@@ -662,6 +702,36 @@
     <None Include="Service References\WSMatricula\configuration91.svcinfo" />
     <None Include="Service References\WSMatricula\configuration.svcinfo" />
     <None Include="Service References\WSMatricula\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSNotas\NotasService.disco" />
+    <None Include="Service References\WSNotas\configuration91.svcinfo" />
+    <None Include="Service References\WSNotas\configuration.svcinfo" />
+    <Content Include="Service References\WSNotas\ProyectoIDCode.WSNotas.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSNotas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSPagos\PagosService.disco" />
+    <None Include="Service References\WSPagos\configuration91.svcinfo" />
+    <None Include="Service References\WSPagos\configuration.svcinfo" />
+    <Content Include="Service References\WSPagos\ProyectoIDCode.WSPagos.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSPagos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\WSReservas\ProyectoIDCode.WSReservas.ReservaMatricula.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSReservas\ReservasService.disco" />
+    <None Include="Service References\WSReservas\configuration91.svcinfo" />
+    <None Include="Service References\WSReservas\configuration.svcinfo" />
+    <None Include="Service References\WSReservas\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -748,7 +818,32 @@
     <Compile Include="restriccion3.aspx.designer.cs">
       <DependentUpon>restriccion3.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\WSAlumnos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WSLibrosPrestados\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WSMatricula\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WSNotas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WSPagos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WSReservas\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -828,6 +923,36 @@
     <None Include="Service References\WSMatricula\ReservaService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\WSNotas\NotasService.wsdl" />
+    <None Include="Service References\WSNotas\NotasService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSNotas\NotasService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSNotas\NotasService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSPagos\PagosService.wsdl" />
+    <None Include="Service References\WSPagos\PagosService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSPagos\PagosService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSPagos\PagosService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSReservas\ReservasService.wsdl" />
+    <None Include="Service References\WSReservas\ReservasService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSReservas\ReservasService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSReservas\ReservasService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -839,7 +964,12 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WSAlumnos\" />
+    <WCFMetadataStorage Include="Service References\WSLibrosPrestados\" />
     <WCFMetadataStorage Include="Service References\WSMatricula\" />
+    <WCFMetadataStorage Include="Service References\WSNotas\" />
+    <WCFMetadataStorage Include="Service References\WSPagos\" />
+    <WCFMetadataStorage Include="Service References\WSReservas\" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

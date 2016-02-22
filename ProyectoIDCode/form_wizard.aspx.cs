@@ -10,6 +10,9 @@ using System.Net;
 using System.IO;
 using ProyectoIDCode.CLASES;
 using System.Web.Script.Serialization;
+using ProyectoIDCode.WSReservas;
+using ProyectoIDCode.WSNotas;
+
 
 namespace ProyectoIDCode
 {
@@ -22,6 +25,10 @@ namespace ProyectoIDCode
         static string flag;
 
         WSMatricula.ReservaServiceClient ws = new WSMatricula.ReservaServiceClient();
+        WSReservas.ReservasServiceClient reserva = new WSReservas.ReservasServiceClient();
+        WSLibrosPrestados.LibrosPerstadosServiceClient libros = new WSLibrosPrestados.LibrosPerstadosServiceClient();
+        WSNotas.NotasServiceClient nota = new WSNotas.NotasServiceClient();
+        WSPagos.PagosServiceClient pagos = new WSPagos.PagosServiceClient();
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -52,7 +59,7 @@ namespace ProyectoIDCode
         {
 
             pnl_mensajeFinal.Visible = true;
-            ReservaMatricula res = ws.registarReserva(cod_alumno);
+            ProyectoIDCode.WSReservas.ReservaMatricula res = reserva.registarReserva(cod_alumno);
 
             if (res.fg_estado.Equals('0'))
             {
@@ -93,7 +100,7 @@ namespace ProyectoIDCode
         protected void btnsitacademica_Click(object sender, EventArgs e)
         {
 
-            Respuesta resp = ws.ListarNotaAlumno(cod_alumno);
+            ProyectoIDCode.WSNotas.Respuesta resp = nota.ListarNotaAlumno(cod_alumno);
             lblmensaje.Text = resp.mensaje;
             notas = resp.flag;
             
@@ -103,7 +110,7 @@ namespace ProyectoIDCode
         protected void btndevolucion_Click(object sender, EventArgs e)
         {
 
-            Respuesta resp = ws.ListarLibrosPrestados(cod_alumno);
+            ProyectoIDCode.WSLibrosPrestados.Respuesta resp = libros.ListarLibrosPrestados(cod_alumno);
             lblmensaje.Text = resp.mensaje;
             bibli = resp.flag;
             des_biblio();
@@ -113,7 +120,7 @@ namespace ProyectoIDCode
 
         protected void btnestadoD_Click(object sender, EventArgs e)
         {
-            Respuesta resp = ws.ListarPagos(cod_alumno);
+            ProyectoIDCode.WSPagos.Respuesta resp = pagos.ListarPagos(cod_alumno);
             lblmensaje.Text = resp.mensaje;
             deud = resp.flag;
             des_deudas();

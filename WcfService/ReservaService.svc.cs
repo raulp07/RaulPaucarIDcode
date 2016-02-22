@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+
 using WcfService.Dominio;
 using WcfService.Persistencia;
 using System.Data;
@@ -106,6 +107,8 @@ namespace WcfService
         {
             return AlumnoDAO.Obtener(cd_alumno);
         }
+        
+        
 
         public Dominio.Padre ConsultarPadre(int cd_padre)
         {
@@ -272,7 +275,7 @@ namespace WcfService
 
 
         }
-
+        
 
 
     }
